@@ -46,7 +46,7 @@ jobs:
       - name: Install R deps
         uses: r-lib/actions/setup-r-dependencies@v2
         with:
-          packages: |
+          packages:|
             shiny
             rsconnect
             dplyr
