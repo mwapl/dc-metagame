@@ -40,7 +40,7 @@ jobs:
         with:
           r-version: '4.3.2'
 
-      - name: Try install R with apt
+      - name: Try install R deps with apt
         run: sudo apt-get install -y r-cran-tidyverse
 
       - name: Install R deps
@@ -57,6 +57,7 @@ jobs:
             viridis
             ggrepel
             purrr
+	    Rmisc
 
       - name: Deploy Shiny App
         run: Rscript scripts/preprocess.R
