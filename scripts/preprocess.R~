@@ -1,0 +1,14 @@
+# scripts/preprocess.R
+library(rsconnect)
+
+# Optionally preprocess or rebuild data here
+source("app.R")
+
+# Deploy
+rsconnect::setAccountInfo(
+  name = Sys.getenv("SHINY_ACCOUNT"),
+  token = Sys.getenv("SHINYAPPS_TOKEN"),
+  secret = Sys.getenv("SHINYAPPS_SECRET")
+)
+
+rsconnect::deployApp(appDir = ".", appName = "metagame-app", forceUpdate = TRUE)
