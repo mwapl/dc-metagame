@@ -41,7 +41,7 @@ jobs:
           r-version: '4.3.2'
 
       - name: Try install R with apt
-        run: apt-get install -y r-cran-tidyverse
+        run: sudo apt-get install -y r-cran-tidyverse
 
       - name: Install R deps
         uses: r-lib/actions/setup-r-dependencies@v2
