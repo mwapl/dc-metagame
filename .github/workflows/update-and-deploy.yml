@@ -56,8 +56,9 @@ jobs:
             binom
             viridis
             ggrepel
-            purrr
 	    Rmisc
+	    purrr
+	    
 
       - name: Deploy Shiny App
         run: Rscript scripts/preprocess.R
