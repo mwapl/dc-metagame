@@ -9,7 +9,7 @@ SCOPES = ["https://www.googleapis.com/auth/spreadsheets.readonly"]
 
 SERVICE_ACCOUNT_JSON = "service_account.json"
 SPREADSHEET_ID = os.getenv("GOOGLE_SHEET_ID")
-SHEET_NAME = "Form Responses"
+SHEET_NAME = "Responses"
 
 creds = Credentials.from_service_account_file(SERVICE_ACCOUNT_JSON, scopes=SCOPES)
 gc = gspread.authorize(creds)
