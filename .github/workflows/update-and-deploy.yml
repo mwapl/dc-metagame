@@ -56,7 +56,7 @@ jobs:
             binom
             viridis
             ggrepel
-	    Rmisc
+	    "Rmisc"
 	    purrr
 	    
 
