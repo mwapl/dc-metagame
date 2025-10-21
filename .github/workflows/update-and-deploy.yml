@@ -11,6 +11,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    env:
+      RENV_PATHS_CACHE: ~/.cache/R/renv
+
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
