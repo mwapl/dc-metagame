@@ -38,6 +38,7 @@ label_map <- c(
   "Juri, Master of the Revue" = "Juri",
   "Feldon, Ronom Excavator" = "Feldon",
   "Kellan, Planar Trailblazer" = "Kellan",
+  "Kraum, Ludevic's Opus|Yoshimaru, Ever Faithful = Yoshi Kraum",
   "Norin, Swift Survivalist" = "Norin",
   "Kefka, Court Mage" = "Kefka",
   "Ketramose, the New Dawn" = "Ketramose",  
@@ -431,13 +432,24 @@ server <- function(input, output) {
       theme_minimal()})
   
   output$metaShare <- renderPlotly({
-    gg <- tier_plot_data() %>%
+    df <- tier_plot_data() %>%
       filter(CZ_player != "Other") %>%
-      arrange(representation) %>%
+      arrange(representation)
+    
+    # Compute dynamic x limit with a margin for labels
+    xmax <- max(df$representation * 100, na.rm = TRUE)
+    margin <- max(xmax * 0.05, 0.5)         # 5% or at least 0.5 units for small values
+    x_limit <- xmax + margin + 1
+    
+    gg <- df %>%
       mutate(CZ_player = factor(CZ_player, levels = CZ_player)) %>%
-      ggplot(aes(x = representation * 100, y = CZ_player, text = paste0(played_games, " games"), fill = representation)) +
+      ggplot(aes(x = representation * 100, y = CZ_player,
+                 text = paste0(played_games, " games"),
+                 fill = representation)) +
       geom_col(show.legend = FALSE) +
-      geom_text(aes(label = paste0(round(representation * 100, 1), "%")), hjust = 2, size = 4) +
+      geom_text(aes(label = paste0(round(representation * 100, 1), "%")),
+                position = position_nudge(x = margin),
+                hjust = 0, size = 4) +
       scale_fill_viridis(discrete = FALSE) +
       labs(
         title = "Metagame share",
@@ -447,22 +459,16 @@ server <- function(input, output) {
       theme_minimal(base_size = 14) +
       theme(
         plot.title = element_text(face = "bold", size = 16),
-        plot.subtitle = element_text(size = 12),
-        plot.caption = element_text(hjust = 0, size = 10),
         axis.text.x = element_blank(),
         axis.ticks.x = element_blank(),
         panel.grid.major.x = element_blank(),
         panel.grid.minor.x = element_blank()
       ) +
-      xlim(0, 10)
+      xlim(0, x_limit)
     
-    p <- ggplotly(gg, tooltip = "text")
-    # Move the x-axis to the top explicitly using plotly's layout
-    
-    p <- p %>% 
-      plotly::style(textposition = "right")
-    
-    p
+    gg
+    ggplotly(gg, tooltip = "text") %>%
+      layout(xaxis = list(side = "top"))
   })
   
   output$tier_categorization <- renderPlot({

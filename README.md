@@ -15,3 +15,4 @@ last games that were recorded by players.
 
 - Web application to ease the data import workflow for tournament organizers.
 
+- Enhance the vizual rendering.
