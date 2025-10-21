@@ -46,7 +46,7 @@ jobs:
       - name: Install R deps
         uses: r-lib/actions/setup-r-dependencies@v2
         with:
-          packages:|
+          packages: |
             shiny
             rsconnect
             dplyr
@@ -56,8 +56,8 @@ jobs:
             binom
             viridis
             ggrepel
-	    "Rmisc"
-	    purrr
+            Rmisc
+            purrr
 	    
 
       - name: Deploy Shiny App
