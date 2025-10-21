@@ -38,7 +38,7 @@ label_map <- c(
   "Juri, Master of the Revue" = "Juri",
   "Feldon, Ronom Excavator" = "Feldon",
   "Kellan, Planar Trailblazer" = "Kellan",
-  "Kraum, Ludevic's Opus|Yoshimaru, Ever Faithful = Yoshi Kraum",
+  "Kraum, Ludevic's Opus|Yoshimaru, Ever Faithful" = "Yoshi Kraum",
   "Norin, Swift Survivalist" = "Norin",
   "Kefka, Court Mage" = "Kefka",
   "Ketramose, the New Dawn" = "Ketramose",  
@@ -63,11 +63,16 @@ label_map <- c(
   "Tifa Lockhart" = "Tifa",
   "Tivit, Seller of Secrets" = "Tivit",
   "Uharis, the Stormspinner" = "Uharis",
-  "Thrasios, Triton Hero|Tymna the Weaver" = "TnT",
+  "Thrasios, Triton Hero|Tymna the Weaver" = "Thrasios X",
   "Vohar, Vodalian Desecrator" = "Vohar",
-  "Bruse Tarl, Boorish Herder|Yoshimaru, Ever Faithful" = "Yoshi Boros",
-  "Dargo, the Shipwrecker|Yoshimaru, Ever Faithful" = "Yoshi Boros",
-  "Cloud, Midgar Mercenary" = "Cloud"
+  "Bruse Tarl, Boorish Herder|Yoshimaru, Ever Faithful" = "Yoshi X Boros",
+  "Dargo, the Shipwrecker|Yoshimaru, Ever Faithful" = "Yoshi X Boros",
+  "Cloud, Midgar Mercenary" = "Cloud",
+  "Acererak the Archlich" = "Acererak",
+  "Amalia Benavides Aguirre" = "Amalia",
+  "G'raha Tia, Scion Reborn" = "G'raha Tia",
+  "Ravos, Soultender|Thrasios, Triton Hero" = "Thrasios X",
+  "Sephiroth, Fabled SOLDIER // Sephiroth, One-Winged Angel" = "Sephiroth"
 )
 
 
@@ -126,7 +131,7 @@ ui <- fluidPage(
   dateRangeInput(
     inputId = "date_filter",
     label = "Filter games by date:",
-    start = min(data$Date, na.rm = TRUE),
+    start = min("2025-09-29"),
     end = max(data$Date, na.rm = TRUE),
     min = min(data$Date, na.rm = TRUE),
     max = max(data$Date, na.rm = TRUE)
