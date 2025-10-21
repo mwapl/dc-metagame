@@ -51,18 +51,8 @@ jobs:
       - name: Install R deps
         uses: r-lib/actions/setup-r-dependencies@v2
         with:
-          packages: |
-            shiny
-            rsconnect
-            dplyr
-            tidyr
-            ggplot2
-            plotly
-            binom
-            viridis
-            ggrepel
-            Rmisc
-            purrr
+          packages: shiny, rsconnect, dplyr, tidyr, ggplot2, plotly, binom, viridis, ggrepel, Rmisc, purrr
+
 	    
 
       - name: Deploy Shiny App
