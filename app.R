@@ -185,6 +185,9 @@ ui <- fluidPage(
       selected = "Viridis"
     ),
   br(),
+  titlePanel("Winrates evaluation"),
+  plotOutput("winrate_ci"),
+  br(),
   titlePanel("Tier list"),
   plotOutput("tier_categorization"),
   br(),
@@ -354,7 +357,8 @@ server <- function(input, output) {
         ci_upper = ci_data()$upper
       ) %>%
       arrange(ci_lower) %>%
-      mutate(CZ_player = factor(CZ_player, levels = CZ_player))
+      mutate(CZ_player = factor(CZ_player, levels = CZ_player)) %>%
+      filter(CZ_player != "Other") 
   })
   
   # Compute stats for tier boundaries
@@ -474,6 +478,64 @@ server <- function(input, output) {
     gg
     ggplotly(gg, tooltip = "text") %>%
       layout(xaxis = list(side = "top"))
+  })
+  
+  output$winrate_ci <- renderPlot({
+    xgrid <- seq(0, 1, length.out = 40)  # 100 dots horizontally
+    
+    # Create all combinations of player × xgrid
+    dots_df <- tier_plot_data() %>%
+      select(CZ_player, ci_lower, ci_upper) %>%
+      crossing(x = xgrid) %>%
+      # Keep only the "outside CI" segments
+      filter(x < ci_lower | x > ci_upper)
+    
+    ggplot(tier_plot_data(), aes(x = winrate * 100, y = CZ_player, color = ci_lower)) +
+      geom_point(
+        data = dots_df,
+        aes(x = x * 100, y = CZ_player),
+        inherit.aes = FALSE,
+        color = "gray80",
+        size = 0.8,
+        alpha = 0.7
+      ) +
+      geom_point(size = 3) +
+      geom_errorbarh(aes(xmin = ci_lower * 100, xmax = ci_upper * 100, color = ci_lower),
+                     height = 0.2, linewidth = 0.8) +
+      geom_vline(xintercept = 50, linetype = "dashed", color = "steelblue", linewidth = 0.8) +
+      scale_x_continuous(limits = c(0, 115), expand = c(0, 0), 
+                         labels = function(x) paste0(x, "%"),) +
+      scale_color_viridis_c(
+        option = "viridis",
+        direction = 1,
+        na.value = "black",
+        limits = c(min(tier_plot_data()$ci_lower), max(tier_plot_data()$ci_lower)),
+        oob = scales::squish
+      ) +
+      labs(
+        title = "DC Win Rates",
+        subtitle = "Bars show 95% confidence intervals",
+        x = "Win Rate"
+      ) +
+      geom_text(aes(label = sprintf("%.1f%%", winrate * 100),
+                    x =  101,fontface = "bold"),
+                hjust = 0, size = 3.5, color = "black") +
+      geom_text(aes(label = sprintf("(%.0f-%.0f%%)", ci_lower * 100, ci_upper * 100),
+                    x =  108),
+                hjust = 0, size = 3.5, color = "#bcbcbc") +
+      theme_minimal(base_family = "Inter") +
+      theme(
+        plot.title = element_text(face = "bold", size = 18, hjust = 0.44),
+        plot.subtitle = element_text(size = 12, hjust = 0.44, color ="#bcbcbc"),
+        axis.title.y = element_blank(),
+        axis.title.x = element_text(size = 11, margin = margin(t = 10)),
+        axis.text.y = element_text(size = 12),
+        axis.text.x = element_text(size = 10),
+        legend.position = "none",
+        panel.grid.major.y = element_blank(),
+        panel.grid.minor = element_blank()
+      )
+    
   })
   
   output$tier_categorization <- renderPlot({
