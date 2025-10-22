@@ -6,7 +6,6 @@
 #
 #    https://shiny.posit.co/
 #
-#setwd("~/perso/nosave/mtg_related/dev/metagame/MetagameDC")
 library(dplyr)
 library(tidyr)
 library(Rmisc)
