@@ -20,64 +20,9 @@ library(binom)
 library(ggrepel)
 
 
-label_map <- c(
-  "Atraxa, Grand Unifier" = "A7traxa",
-  "Aragorn, King of Gondor" = "Aragorn jeskai",
-  "Asmoranomardicadaistinaculdacar" = "Asmo",
-  "Azusa, Lost but Seeking" = "Azusa",
-  "Basim Ibn Ishaq" = "Basim",
-  "Deadpool, Trading Card" = "Deadpool",  
-  "Ertai Resurrected" = "Ertaï",
-  "Flamewar, Brash Veteran // Flamewar, Streetwise Operative" = "Flamewar",
-  "Glarb, Calamity's Augur" = "Glarb",
-  "Golos, Tireless Pilgrim" = "Golos",
-  "Grist, the Hunger Tide"  ="Grist",
-  "Hidetsugu and Kairi" = "H&K",
-  "Jenson Carthalion, Druid Exile" = "Jenson Carthalion",
-  "Juri, Master of the Revue" = "Juri",
-  "Feldon, Ronom Excavator" = "Feldon",
-  "Kellan, Planar Trailblazer" = "Kellan",
-  "Kraum, Ludevic's Opus|Yoshimaru, Ever Faithful" = "Yoshi Kraum",
-  "Norin, Swift Survivalist" = "Norin",
-  "Kefka, Court Mage" = "Kefka",
-  "Ketramose, the New Dawn" = "Ketramose",  
-  "Leovold, Emissary of Trest" = "Leovold",
-  "Lier, Disciple of the Drowned" = "Lier",
-  "Light-Paws, Emperor's Voice" = "Light-Paws",
-  "Magda, Brazen Outlaw" = "Magda",
-  "Malcolm, Alluring Scoundrel" = "Malcolm U",
-  "Malcolm, the Eyes" = "Malcolm UR",
-  "Marath, Will of the Wild" = "Marath",
-  "Marchesa, Dealer of Death" = "Marchesa",  
-  "Niv-Mizzet Reborn" ="Niv 5c",
-  "Phelia, Exuberant Shepherd" = "Phelia",
-  "Phlage, Titan of Fire's Fury" = "Phlage",
-  "Plagon, Lord of the Beach" = "Plagon",
-  "Aminatou, the Fateshifter" = "Aminatou",  
-  "Rograkh, Son of Rohgahh|Tevesh Szat, Doom of Fools" = "Rograkh Tevesh",
-  "Satya, Aetherflux Genius" = "Satya",
-  "Slimefoot and Squee" = "SnS",
-  "Sheoldred, the Apocalypse" = "Sheoldred",
-  "Sorin of House Markov // Sorin, Ravenous Neonate" = "Sorin",
-  "Tifa Lockhart" = "Tifa",
-  "Tivit, Seller of Secrets" = "Tivit",
-  "Uharis, the Stormspinner" = "Uharis",
-  "Thrasios, Triton Hero|Tymna the Weaver" = "Thrasios X",
-  "Vohar, Vodalian Desecrator" = "Vohar",
-  "Bruse Tarl, Boorish Herder|Yoshimaru, Ever Faithful" = "Yoshi X Boros",
-  "Dargo, the Shipwrecker|Yoshimaru, Ever Faithful" = "Yoshi X Boros",
-  "Cloud, Midgar Mercenary" = "Cloud",
-  "Acererak the Archlich" = "Acererak",
-  "Amalia Benavides Aguirre" = "Amalia",
-  "G'raha Tia, Scion Reborn" = "G'raha Tia",
-  "Ravos, Soultender|Thrasios, Triton Hero" = "Thrasios X",
-  "Sephiroth, Fabled SOLDIER // Sephiroth, One-Winged Angel" = "Sephiroth"
-)
-
+source("includes/command_zone_alias.R")
 
 data <- read.csv("./data/form_responses.csv", header = TRUE, sep = ",")
-
-
 
 # Add a proper date
 data$Horodateur <- as.POSIXct(data$Horodateur, tz = "UTC", tryFormats = c(
@@ -98,13 +43,6 @@ data$Command.zone.du.joueur.2 <-
          label_map[data$Command.zone.du.joueur.2],
          data$Command.zone.du.joueur.2)
 
-
-#field$CZ_player <- trimws(field$CZ_player)
-
-#field$CZ_player <- 
-#  ifelse(field$CZ_player %in% names(label_map),
-#         label_map[field$CZ_player],
-#         field$CZ_player)
 
 # Define a function to determine winner
 get_winner <- function(result, p1, p2) {
