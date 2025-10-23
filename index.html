@@ -119,13 +119,14 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">🎯 Overview</a></li>
-  <li><a href="#the-project" id="toc-the-project" class="nav-link" data-scroll-target="#the-project">The project</a></li>
+  <li><a href="#the-project" id="toc-the-project" class="nav-link" data-scroll-target="#the-project">💾 The Project</a></li>
   <li><a href="#metagame-overview" id="toc-metagame-overview" class="nav-link" data-scroll-target="#metagame-overview">📊 Metagame Overview</a>
   <ul class="collapse">
   <li><a href="#matchup-matrix" id="toc-matchup-matrix" class="nav-link" data-scroll-target="#matchup-matrix">Matchup matrix</a></li>
   <li><a href="#metagame-share" id="toc-metagame-share" class="nav-link" data-scroll-target="#metagame-share">Metagame Share</a></li>
   </ul></li>
   <li><a href="#for-tournament-organizers" id="toc-for-tournament-organizers" class="nav-link" data-scroll-target="#for-tournament-organizers">🏆 For Tournament Organizers</a></li>
+  <li><a href="#how-it-works" id="toc-how-it-works" class="nav-link" data-scroll-target="#how-it-works">🔍 How It Works</a></li>
   <li><a href="#acknowledgments" id="toc-acknowledgments" class="nav-link" data-scroll-target="#acknowledgments">Acknowledgments</a></li>
   </ul>
 </nav>
@@ -161,9 +162,13 @@ ul.task-list li input[type="checkbox"] {
 <hr>
 </section>
 <section id="the-project" class="level2">
-<h2 class="anchored" data-anchor-id="the-project">The project</h2>
-<p>As a user, you simply record your game result through <strong><a href="https://script.google.com/macros/s/AKfycbypLu4K7h7oZ7k6kKpNl0uWtzl0QRcZQJB4Axfd--1vffgGcsnXSPUsHlWCpCusXva9/exec">this form</a></strong> (which is nothing more than a pimped google form, cf section “How does it work” if you are interested). The most important data there are the results and the command zone. You <strong>must</strong> enter them to make an entry. Other fields are optionnal, but can help retrieve your data if you happens to make mistakes. Feel free to provide them or not.</p>
-<p>From those entry, graphics like the ones in Metagame Overview are produced.</p>
+<h2 class="anchored" data-anchor-id="the-project">💾 The Project</h2>
+<p>Players can easily record their games using this <strong><a href="https://script.google.com/macros/s/AKfycbypLu4K7h7oZ7k6kKpNl0uWtzl0QRcZQJB4Axfd--1vffgGcsnXSPUsHlWCpCusXva9/exec">submission form</a></strong>.</p>
+<p>The form is essentially a stylized Google Form (see <em>How It Works</em> below for details).<br>
+The most important fields are: - <strong>Match result</strong><br>
+- <strong>Command zones</strong> (both your and your opponent’s)</p>
+<p>Other fields are optional but can help us fix errors or provide richer context.</p>
+<p>From these entries, the system automatically computes metagame metrics and produces visuals like those below.</p>
 <hr>
 </section>
 <section id="metagame-overview" class="level2">
@@ -172,7 +177,10 @@ ul.task-list li input[type="checkbox"] {
 They highlight the <strong>top 20 command zones</strong> by number of recorded games.</p>
 <section id="matchup-matrix" class="level3">
 <h3 class="anchored" data-anchor-id="matchup-matrix">Matchup matrix</h3>
-<p>::: {#Matchup Matrix} <iframe src="plots/matchup_matrix.html" width="100%" height="600" style="border:none;"></iframe> :::</p>
+<div id="Matchup-Matrix">
+<iframe src="plots/matchup_matrix.html" width="100%" height="600" style="border:none;">
+</iframe>
+</div>
 </section>
 <section id="metagame-share" class="level3">
 <h3 class="anchored" data-anchor-id="metagame-share">Metagame Share</h3>
@@ -197,6 +205,24 @@ so it may occasionally be unavailable due to hosting limits.</p>
 <blockquote class="blockquote">
 <p>🧰 Coming soon: an online version of those explainations with all the formating tools needed.</p>
 </blockquote>
+<hr>
+</section>
+<section id="how-it-works" class="level2">
+<h2 class="anchored" data-anchor-id="how-it-works">🔍 How It Works</h2>
+<p>Here’s a simplified overview of the process:</p>
+<ol type="1">
+<li><p><strong>Game data collection</strong> Players record their match results through a public form. This form is actually a custom Google Apps Script that mimics a standard Google Form but adds smarter behavior:</p>
+<ul>
+<li>Auto-completion for CZ</li>
+<li>Automatic detection of partners and backgrounds</li>
+<li>Dynamic synchronization of legal commanders retrieved directly from Scryfall</li>
+</ul></li>
+<li><p><strong>Automated data retrieval</strong> A scheduled GitHub Action runs a Python script to download the form responses from the linked google sheet.</p></li>
+<li><p><strong>Data processing &amp; visualization</strong><br>
+<strong>R</strong> scripts preprocess the data and generate static interactive plots with <strong>ggplot2</strong> and <strong>plotly</strong>. A dynamic page allowing to select the number of command zones and the time period is also contructed through <strong>shiny app</strong>.</p></li>
+<li><p><strong>Static website build</strong><br>
+The plots are embedded here on this site, automatically updated every evening with <strong>Quarto</strong>.</p></li>
+</ol>
 <hr>
 </section>
 <section id="acknowledgments" class="level2">
