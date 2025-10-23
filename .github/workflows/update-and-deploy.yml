@@ -56,6 +56,10 @@ jobs:
         with:
           packages: shiny, rsconnect, dplyr, tidyr, ggplot2, plotly, binom, viridis, ggrepel, Rmisc, purrr
 
+      - name: Generate static plots
+        run: |
+	  Rscript scripts/static_plots.R
+
       - name: Deploy Shiny App
         run: Rscript scripts/preprocess.R
         env:

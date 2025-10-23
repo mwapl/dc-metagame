@@ -1,0 +1,25 @@
+project:
+  type: website
+  output-dir: docs  # GitHub Pages will serve from /docs
+
+website:
+  title: "Duel Commander Metagame"
+  navbar:
+    left:
+      - text: "Home"
+        href: index.qmd
+      - text: "Tools"
+        href: tools/index.html
+      - text: "About"
+        href: about.qmd
+    right:
+      - icon: github
+        href: https://github.com/mwapl/dc-metagame
+  page-footer:
+    left: "© 2025 mwapl"
+    right: "Built with Quarto, Streamlit, and Shiny"
+
+format:
+  html:
+    theme: cosmo
+    toc: true
