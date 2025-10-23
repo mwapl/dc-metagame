@@ -49,7 +49,8 @@ label_map <- c(
   "Amalia Benavides Aguirre" = "Amalia",
   "G'raha Tia, Scion Reborn" = "G'raha Tia",
   "Ravos, Soultender|Thrasios, Triton Hero" = "Thrasios X",
-  "Sephiroth, Fabled SOLDIER // Sephiroth, One-Winged Angel" = "Sephiroth"
+  "Sephiroth, Fabled SOLDIER // Sephiroth, One-Winged Angel" = "Sephiroth",
+  "Rograkh, Son of Rohgahh|Silas Renn, Seeker Adept" = "Rograkh&Silas"
 )
 
 

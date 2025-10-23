@@ -1,34 +1,88 @@
 ---
-title: "French Duel Commander Metagame"
+title: "French Duel Commander Metagame Project"
 ---
 
 ## 🎯 Overview
 
-Welcome to the **Duel Commander Metagame Dashboard** — a community-driven project tracking deck performance and metagame trends.
+Welcome to the **Duel Commander Metagame Dashboard** — a small community-driven project.
 
-You can explore:
+This project started from a small local experiment in Rennes,
+France. The question was simple: *could we prepare for tournaments
+seriously?* People started thinking about logging their games in
+some sort of data sheets. That's when I decided to come up with this
+*project*.
 
-- The **[Interactive Shiny App](https://your-shinyapps-url.shinyapps.io/metagame/)** (live winrates, matchup tables)
-- The **[Data Generation Tool](tools/index.html)** to help tournament organizers format submissions
+It started with a few games here and there registered by friends. A
+week after, I was recording every local FNM games results with some
+sort of automation. A month later, I plugged in the first 100 player
+tournament data.
+
+We think that this silly project deserve a bit more results than our
+small local community now, and that everyone should have access to those
+informations.
 
 ---
 
-## 🔍 What’s Inside
+## The project
 
-- Automated data fetching from Google Sheets
-- Dynamic tier computation and metagame visualizations
-- Python helpers to clean tournament CSVs
+As a user, you simply record your game result through **[this
+form](https://script.google.com/macros/s/AKfycbypLu4K7h7oZ7k6kKpNl0uWtzl0QRcZQJB4Axfd--1vffgGcsnXSPUsHlWCpCusXva9/exec)**
+(which is nothing more than a pimped google form, cf section "How does
+it work" if you are interested). The most important data there are the
+results and the command zone. You **must** enter them to make an
+entry. Other fields are optionnal, but can help retrieve your data if
+you happens to make mistakes. Feel free to provide them or not.
+
+From those entry, graphics like the ones in Metagame Overview are produced.
 
 ---
 
-## Metagame Overview
+## 📊 Metagame Overview
 
-Below is the latest metagame breakdown:
+The plots below summarize data collected since the most recent Duel Commander banlist.  
+They highlight the **top 20 command zones** by number of recorded games.
 
-::: {#meta-share}
+### Matchup matrix
+::: {#Matchup Matrix}
 <iframe src="plots/matchup_matrix.html" width="100%" height="600" style="border:none;"></iframe>
 :::
 
+
+### Metagame Share
+::: {#metagame-share}
+<iframe src="plots/metagame_share.html" width="100%" height="600" style="border:none;"></iframe>
+:::
+
+Want to explore further?  
+Try out the **[interactive Shiny app](https://your-shinyapps-url.shinyapps.io/metagame/)** — look at even more plots, compare time periods, or dive into specific matchups.
+
+> ⚠️ *Note:* The app is hosted for free on [shinyapps.io](https://www.shinyapps.io/),  
+> so it may occasionally be unavailable due to hosting limits.
+
 ---
 
-> 💡 _This site is statically hosted on GitHub Pages and updates automatically from main._
+## 🏆 For Tournament Organizers
+
+If you organize Duel Commander events, you can definitively help enrich the dataset!
+
+Typically, you will have a form of dataset matching each player name
+with a command zone and sone access to a running eventlink. If that's
+the case, you can contact me directly on discord @mwapl and I will
+show you how to produce data entries.
+
+No dark magic here, only a light chrome extension to extract game
+results from eventlink, and a python script to match player names
+between pairings and your decklist entry.
+
+> 🧰 Coming soon: an online version of those explainations with all the formating tools needed.
+
+---
+
+## Acknowledgments
+
+Huge thanks to **Aliquanto** and **Jiliac**, whose R graphic styles inspired the look of these visualizations.
+
+---
+
+> 💡 *This site is built and deployed automatically using GitHub Actions and GitHub Pages.*  
+> Each day, new game data is fetched, analyzed, and visualized — keeping the dashboard up to date for everyone.
