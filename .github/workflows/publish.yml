@@ -25,7 +25,6 @@ jobs:
         run: |
           cd site
           quarto render
-          touch .nojekyll
 
 
       - name: Deploy to GitHub Pages
