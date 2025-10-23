@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>French Duel Commander Metagame – Duel Commander Metagame</title>
+<title>French Duel Commander Metagame Project – Duel Commander Metagame</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -95,14 +95,6 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link active" href="./index.html" aria-current="page"> 
 <span class="menu-text">Home</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./tools/index.html"> 
-<span class="menu-text">Tools</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./about.qmd"> 
-<span class="menu-text">About</span></a>
-  </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
@@ -127,8 +119,14 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">🎯 Overview</a></li>
-  <li><a href="#whats-inside" id="toc-whats-inside" class="nav-link" data-scroll-target="#whats-inside">🔍 What’s Inside</a></li>
-  <li><a href="#metagame-overview" id="toc-metagame-overview" class="nav-link" data-scroll-target="#metagame-overview">Metagame Overview</a></li>
+  <li><a href="#the-project" id="toc-the-project" class="nav-link" data-scroll-target="#the-project">The project</a></li>
+  <li><a href="#metagame-overview" id="toc-metagame-overview" class="nav-link" data-scroll-target="#metagame-overview">📊 Metagame Overview</a>
+  <ul class="collapse">
+  <li><a href="#matchup-matrix" id="toc-matchup-matrix" class="nav-link" data-scroll-target="#matchup-matrix">Matchup matrix</a></li>
+  <li><a href="#metagame-share" id="toc-metagame-share" class="nav-link" data-scroll-target="#metagame-share">Metagame Share</a></li>
+  </ul></li>
+  <li><a href="#for-tournament-organizers" id="toc-for-tournament-organizers" class="nav-link" data-scroll-target="#for-tournament-organizers">🏆 For Tournament Organizers</a></li>
+  <li><a href="#acknowledgments" id="toc-acknowledgments" class="nav-link" data-scroll-target="#acknowledgments">Acknowledgments</a></li>
   </ul>
 </nav>
     </div>
@@ -137,7 +135,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">French Duel Commander Metagame</h1>
+<h1 class="title">French Duel Commander Metagame Project</h1>
 </div>
 
 
@@ -156,33 +154,58 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="overview" class="level2">
 <h2 class="anchored" data-anchor-id="overview">🎯 Overview</h2>
-<p>Welcome to the <strong>Duel Commander Metagame Dashboard</strong> — a community-driven project tracking deck performance and metagame trends.</p>
-<p>You can explore:</p>
-<ul>
-<li>The <strong><a href="https://your-shinyapps-url.shinyapps.io/metagame/">Interactive Shiny App</a></strong> (live winrates, matchup tables)</li>
-<li>The <strong><a href="tools/index.html">Data Generation Tool</a></strong> to help tournament organizers format submissions</li>
-</ul>
+<p>Welcome to the <strong>Duel Commander Metagame Dashboard</strong> — a small community-driven project.</p>
+<p>This project started from a small local experiment in Rennes, France. The question was simple: <em>could we prepare for tournaments seriously?</em> People started thinking about logging their games in some sort of data sheets. That’s when I decided to come up with this <em>project</em>.</p>
+<p>It started with a few games here and there registered by friends. A week after, I was recording every local FNM games results with some sort of automation. A month later, I plugged in the first 100 player tournament data.</p>
+<p>We think that this silly project deserve a bit more results than our small local community now, and that everyone should have access to those informations.</p>
 <hr>
 </section>
-<section id="whats-inside" class="level2">
-<h2 class="anchored" data-anchor-id="whats-inside">🔍 What’s Inside</h2>
-<ul>
-<li>Automated data fetching from Google Sheets</li>
-<li>Dynamic tier computation and metagame visualizations</li>
-<li>Python helpers to clean tournament CSVs</li>
-</ul>
+<section id="the-project" class="level2">
+<h2 class="anchored" data-anchor-id="the-project">The project</h2>
+<p>As a user, you simply record your game result through <strong><a href="https://script.google.com/macros/s/AKfycbypLu4K7h7oZ7k6kKpNl0uWtzl0QRcZQJB4Axfd--1vffgGcsnXSPUsHlWCpCusXva9/exec">this form</a></strong> (which is nothing more than a pimped google form, cf section “How does it work” if you are interested). The most important data there are the results and the command zone. You <strong>must</strong> enter them to make an entry. Other fields are optionnal, but can help retrieve your data if you happens to make mistakes. Feel free to provide them or not.</p>
+<p>From those entry, graphics like the ones in Metagame Overview are produced.</p>
 <hr>
 </section>
 <section id="metagame-overview" class="level2">
-<h2 class="anchored" data-anchor-id="metagame-overview">Metagame Overview</h2>
-<p>Below is the latest metagame breakdown:</p>
-<div id="meta-share">
-<iframe src="plots/matchup_matrix.html" width="100%" height="600" style="border:none;">
+<h2 class="anchored" data-anchor-id="metagame-overview">📊 Metagame Overview</h2>
+<p>The plots below summarize data collected since the most recent Duel Commander banlist.<br>
+They highlight the <strong>top 20 command zones</strong> by number of recorded games.</p>
+<section id="matchup-matrix" class="level3">
+<h3 class="anchored" data-anchor-id="matchup-matrix">Matchup matrix</h3>
+<p>::: {#Matchup Matrix} <iframe src="plots/matchup_matrix.html" width="100%" height="600" style="border:none;"></iframe> :::</p>
+</section>
+<section id="metagame-share" class="level3">
+<h3 class="anchored" data-anchor-id="metagame-share">Metagame Share</h3>
+<div id="metagame-share">
+<iframe src="plots/metagame_share.html" width="100%" height="600" style="border:none;">
 </iframe>
 </div>
+<p>Want to explore further?<br>
+Try out the <strong><a href="https://your-shinyapps-url.shinyapps.io/metagame/">interactive Shiny app</a></strong> — look at even more plots, compare time periods, or dive into specific matchups.</p>
+<blockquote class="blockquote">
+<p>⚠️ <em>Note:</em> The app is hosted for free on <a href="https://www.shinyapps.io/">shinyapps.io</a>,<br>
+so it may occasionally be unavailable due to hosting limits.</p>
+</blockquote>
+<hr>
+</section>
+</section>
+<section id="for-tournament-organizers" class="level2">
+<h2 class="anchored" data-anchor-id="for-tournament-organizers">🏆 For Tournament Organizers</h2>
+<p>If you organize Duel Commander events, you can definitively help enrich the dataset!</p>
+<p>Typically, you will have a form of dataset matching each player name with a command zone and sone access to a running eventlink. If that’s the case, you can contact me directly on discord <span class="citation" data-cites="mwapl">@mwapl</span> and I will show you how to produce data entries.</p>
+<p>No dark magic here, only a light chrome extension to extract game results from eventlink, and a python script to match player names between pairings and your decklist entry.</p>
+<blockquote class="blockquote">
+<p>🧰 Coming soon: an online version of those explainations with all the formating tools needed.</p>
+</blockquote>
+<hr>
+</section>
+<section id="acknowledgments" class="level2">
+<h2 class="anchored" data-anchor-id="acknowledgments">Acknowledgments</h2>
+<p>Huge thanks to <strong>Aliquanto</strong> and <strong>Jiliac</strong>, whose R graphic styles inspired the look of these visualizations.</p>
 <hr>
 <blockquote class="blockquote">
-<p>💡 <em>This site is statically hosted on GitHub Pages and updates automatically from main.</em></p>
+<p>💡 <em>This site is built and deployed automatically using GitHub Actions and GitHub Pages.</em><br>
+Each day, new game data is fetched, analyzed, and visualized — keeping the dashboard up to date for everyone.</p>
 </blockquote>
 
 

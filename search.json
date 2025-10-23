@@ -2,29 +2,43 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "French Duel Commander Metagame",
+    "title": "French Duel Commander Metagame Project",
     "section": "",
-    "text": "Welcome to the Duel Commander Metagame Dashboard — a community-driven project tracking deck performance and metagame trends.\nYou can explore:\n\nThe Interactive Shiny App (live winrates, matchup tables)\nThe Data Generation Tool to help tournament organizers format submissions"
+    "text": "Welcome to the Duel Commander Metagame Dashboard — a small community-driven project.\nThis project started from a small local experiment in Rennes, France. The question was simple: could we prepare for tournaments seriously? People started thinking about logging their games in some sort of data sheets. That’s when I decided to come up with this project.\nIt started with a few games here and there registered by friends. A week after, I was recording every local FNM games results with some sort of automation. A month later, I plugged in the first 100 player tournament data.\nWe think that this silly project deserve a bit more results than our small local community now, and that everyone should have access to those informations."
   },
   {
     "objectID": "index.html#overview",
     "href": "index.html#overview",
-    "title": "French Duel Commander Metagame",
+    "title": "French Duel Commander Metagame Project",
     "section": "",
-    "text": "Welcome to the Duel Commander Metagame Dashboard — a community-driven project tracking deck performance and metagame trends.\nYou can explore:\n\nThe Interactive Shiny App (live winrates, matchup tables)\nThe Data Generation Tool to help tournament organizers format submissions"
+    "text": "Welcome to the Duel Commander Metagame Dashboard — a small community-driven project.\nThis project started from a small local experiment in Rennes, France. The question was simple: could we prepare for tournaments seriously? People started thinking about logging their games in some sort of data sheets. That’s when I decided to come up with this project.\nIt started with a few games here and there registered by friends. A week after, I was recording every local FNM games results with some sort of automation. A month later, I plugged in the first 100 player tournament data.\nWe think that this silly project deserve a bit more results than our small local community now, and that everyone should have access to those informations."
   },
   {
-    "objectID": "index.html#whats-inside",
-    "href": "index.html#whats-inside",
-    "title": "French Duel Commander Metagame",
-    "section": "🔍 What’s Inside",
-    "text": "🔍 What’s Inside\n\nAutomated data fetching from Google Sheets\nDynamic tier computation and metagame visualizations\nPython helpers to clean tournament CSVs"
+    "objectID": "index.html#the-project",
+    "href": "index.html#the-project",
+    "title": "French Duel Commander Metagame Project",
+    "section": "The project",
+    "text": "The project\nAs a user, you simply record your game result through this form (which is nothing more than a pimped google form, cf section “How does it work” if you are interested). The most important data there are the results and the command zone. You must enter them to make an entry. Other fields are optionnal, but can help retrieve your data if you happens to make mistakes. Feel free to provide them or not.\nFrom those entry, graphics like the ones in Metagame Overview are produced."
   },
   {
     "objectID": "index.html#metagame-overview",
     "href": "index.html#metagame-overview",
-    "title": "French Duel Commander Metagame",
-    "section": "Metagame Overview",
-    "text": "Metagame Overview\nBelow is the latest metagame breakdown:\n\n\n\n\n\n\n💡 This site is statically hosted on GitHub Pages and updates automatically from main."
+    "title": "French Duel Commander Metagame Project",
+    "section": "📊 Metagame Overview",
+    "text": "📊 Metagame Overview\nThe plots below summarize data collected since the most recent Duel Commander banlist.\nThey highlight the top 20 command zones by number of recorded games.\n\nMatchup matrix\n::: {#Matchup Matrix}  :::\n\n\nMetagame Share\n\n\n\n\nWant to explore further?\nTry out the interactive Shiny app — look at even more plots, compare time periods, or dive into specific matchups.\n\n⚠️ Note: The app is hosted for free on shinyapps.io,\nso it may occasionally be unavailable due to hosting limits."
+  },
+  {
+    "objectID": "index.html#for-tournament-organizers",
+    "href": "index.html#for-tournament-organizers",
+    "title": "French Duel Commander Metagame Project",
+    "section": "🏆 For Tournament Organizers",
+    "text": "🏆 For Tournament Organizers\nIf you organize Duel Commander events, you can definitively help enrich the dataset!\nTypically, you will have a form of dataset matching each player name with a command zone and sone access to a running eventlink. If that’s the case, you can contact me directly on discord @mwapl and I will show you how to produce data entries.\nNo dark magic here, only a light chrome extension to extract game results from eventlink, and a python script to match player names between pairings and your decklist entry.\n\n🧰 Coming soon: an online version of those explainations with all the formating tools needed."
+  },
+  {
+    "objectID": "index.html#acknowledgments",
+    "href": "index.html#acknowledgments",
+    "title": "French Duel Commander Metagame Project",
+    "section": "Acknowledgments",
+    "text": "Acknowledgments\nHuge thanks to Aliquanto and Jiliac, whose R graphic styles inspired the look of these visualizations.\n\n\n💡 This site is built and deployed automatically using GitHub Actions and GitHub Pages.\nEach day, new game data is fetched, analyzed, and visualized — keeping the dashboard up to date for everyone."
   }
 ]
