@@ -23,9 +23,9 @@ jobs:
 
       - name: Render Quarto site
         run: |
-          touch .nojekyll
           cd site
           quarto render
+          touch .nojekyll
 
 
       - name: Deploy to GitHub Pages
