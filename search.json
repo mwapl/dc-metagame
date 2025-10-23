@@ -1,0 +1,30 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "French Duel Commander Metagame",
+    "section": "",
+    "text": "Welcome to the Duel Commander Metagame Dashboard — a community-driven project tracking deck performance and metagame trends.\nYou can explore:\n\nThe Interactive Shiny App (live winrates, matchup tables)\nThe Data Generation Tool to help tournament organizers format submissions"
+  },
+  {
+    "objectID": "index.html#overview",
+    "href": "index.html#overview",
+    "title": "French Duel Commander Metagame",
+    "section": "",
+    "text": "Welcome to the Duel Commander Metagame Dashboard — a community-driven project tracking deck performance and metagame trends.\nYou can explore:\n\nThe Interactive Shiny App (live winrates, matchup tables)\nThe Data Generation Tool to help tournament organizers format submissions"
+  },
+  {
+    "objectID": "index.html#whats-inside",
+    "href": "index.html#whats-inside",
+    "title": "French Duel Commander Metagame",
+    "section": "🔍 What’s Inside",
+    "text": "🔍 What’s Inside\n\nAutomated data fetching from Google Sheets\nDynamic tier computation and metagame visualizations\nPython helpers to clean tournament CSVs"
+  },
+  {
+    "objectID": "index.html#metagame-overview",
+    "href": "index.html#metagame-overview",
+    "title": "French Duel Commander Metagame",
+    "section": "Metagame Overview",
+    "text": "Metagame Overview\nBelow is the latest metagame breakdown:\n\n\n\n\n\n\n💡 This site is statically hosted on GitHub Pages and updates automatically from main."
+  }
+]
