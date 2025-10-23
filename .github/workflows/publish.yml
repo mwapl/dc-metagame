@@ -7,12 +7,16 @@ on:
   schedule:
     - cron: "0 21 * * *"  # optional daily rebuild
 
+permissions:
+  contents: write
 
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
       - name: Setup Quarto
         uses: quarto-dev/quarto-actions/setup@v2
@@ -21,10 +25,9 @@ jobs:
         run: |
           cd site
           quarto render
-          touch _site/.nojekyll    # prevent Jekyll build
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: site/_site
+          publish_dir: site/docs
