@@ -1,9 +1,9 @@
 name: Publish website
 
 on:
-  push:
-    branches: [ main ]
   workflow_dispatch:
+  repository_dispatch:
+    types: [build-site]
   schedule:
     - cron: "0 21 * * *"  # optional daily rebuild
 

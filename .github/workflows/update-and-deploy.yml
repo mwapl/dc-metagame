@@ -66,6 +66,12 @@ jobs:
           name: generated-plots
           path: site/plots/
 
+      - name: Trigger site publish
+        uses: peter-evans/repository-dispatch@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          event-type: build-site
+
       - name: Deploy Shiny App
         run: Rscript scripts/preprocess.R
         env:
