@@ -8,10 +8,6 @@ website:
     left:
       - text: "Home"
         href: index.qmd
-      - text: "Tools"
-        href: tools/index.html
-      - text: "About"
-        href: about.qmd
     right:
       - icon: github
         href: https://github.com/mwapl/dc-metagame
