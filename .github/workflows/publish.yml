@@ -23,8 +23,10 @@ jobs:
 
       - name: Render Quarto site
         run: |
+          touch .nojekyll
           cd site
           quarto render
+	  
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
