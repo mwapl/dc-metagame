@@ -58,7 +58,7 @@ jobs:
 
       - name: Generate static plots
         run: |
-	  Rscript scripts/static_plots.R
+          Rscript scripts/static_plots.R
 
       - name: Deploy Shiny App
         run: Rscript scripts/preprocess.R
