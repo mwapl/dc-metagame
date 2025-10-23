@@ -60,6 +60,12 @@ jobs:
         run: |
           Rscript scripts/static_plots.R
 
+      - name: Upload generated artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: generated-plots
+          path: site/plots/
+
       - name: Deploy Shiny App
         run: Rscript scripts/preprocess.R
         env:
