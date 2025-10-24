@@ -211,17 +211,19 @@ so it may occasionally be unavailable due to hosting limits.</p>
 <h2 class="anchored" data-anchor-id="how-it-works">🔍 How It Works</h2>
 <p>Here’s a simplified overview of the process:</p>
 <ol type="1">
-<li><p><strong>Game data collection</strong> Players record their match results through a public form. This form is actually a custom Google Apps Script that mimics a standard Google Form but adds smarter behavior:</p>
+<li><p><strong>Game data collection</strong></p>
+<p>Players record their match results through a public form. This form is actually a custom Google Apps Script that mimics a standard Google Form but adds smarter behavior:</p>
 <ul>
 <li>Auto-completion for CZ</li>
 <li>Automatic detection of partners and backgrounds</li>
 <li>Dynamic synchronization of legal commanders retrieved directly from Scryfall</li>
 </ul></li>
-<li><p><strong>Automated data retrieval</strong> A scheduled GitHub Action runs a Python script to download the form responses from the linked google sheet.</p></li>
-<li><p><strong>Data processing &amp; visualization</strong><br>
-<strong>R</strong> scripts preprocess the data and generate static interactive plots with <strong>ggplot2</strong> and <strong>plotly</strong>. A dynamic page allowing to select the number of command zones and the time period is also contructed through <strong>shiny app</strong>.</p></li>
-<li><p><strong>Static website build</strong><br>
-The plots are embedded here on this site, automatically updated every evening with <strong>Quarto</strong>.</p></li>
+<li><p><strong>Automated data retrieval</strong></p>
+<p>A scheduled GitHub Action runs a Python script to download the form responses from the linked google sheet.</p></li>
+<li><p><strong>Data processing &amp; visualization</strong></p>
+<p><strong>R</strong> scripts preprocess the data and generate static interactive plots with <strong>ggplot2</strong> and <strong>plotly</strong>. A dynamic page allowing to select the number of command zones and the time period is also contructed through <strong>shiny app</strong>.</p></li>
+<li><p><strong>Static website build</strong></p>
+<p>The plots are embedded here on this site, automatically updated every evening with <strong>Quarto</strong>.</p></li>
 </ol>
 <hr>
 </section>
