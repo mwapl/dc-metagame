@@ -18,7 +18,7 @@
     "href": "index.html#the-project",
     "title": "French Duel Commander Metagame Project",
     "section": "💾 The Project",
-    "text": "💾 The Project\nPlayers can easily record their games using this submission form.\nThe form is essentially a stylized Google Form (see How It Works below for details).\nThe most important fields are:\n\nMatch result\n\nCommand zones (both your and your opponent’s)\n\nOther fields are optional but can help us fix errors or provide richer context.\nFrom these entries, the system automatically computes metagame metrics and produces visuals like those below."
+    "text": "💾 The Project\nPlayers can easily record their games using this submission form.\nThe form is essentially a stylized Google Form (see How It Works below for details).\nThe most important fields are:\n\nMatch result\n\nCommand zones (both your and your opponent’s)\n\nOther fields are optional but can help us fix errors or provide richer context. For instance, you might want to indicate where the game was played in the note (kitchen table, fnm, mtgo, RC, etc.).\nFrom these entries, the system automatically computes metagame metrics and produces visuals like those below."
   },
   {
     "objectID": "index.html#metagame-overview",
@@ -46,6 +46,6 @@
     "href": "index.html#acknowledgments",
     "title": "French Duel Commander Metagame Project",
     "section": "Acknowledgments",
-    "text": "Acknowledgments\nHuge thanks to Aliquanto and Jiliac, whose R graphic styles inspired the look of these visualizations.\n\n💡 This site is built and deployed automatically using GitHub Actions and GitHub Pages.\nEach day, new game data is fetched, analyzed, and visualized — keeping the dashboard up to date for everyone."
+    "text": "Acknowledgments\nA particular mention goes to the Roazhon DC team, which initiated the project and gave precious feedback.\nHuge thanks to Aliquanto and Jiliac, whose R graphic styles inspired the look of these visualizations.\n\n💡 This site is built and deployed automatically using GitHub Actions and GitHub Pages.\nEach day, new game data is fetched, analyzed, and visualized — keeping the dashboard up to date for everyone."
   }
 ]
