@@ -32,7 +32,8 @@ The most important fields are:
   - **Match result**  
   - **Command zones** (both your and your opponent’s)
 
-Other fields are optional but can help us fix errors or provide richer context.
+Other fields are optional but can help us fix errors or provide richer context. For instance, you might want to
+indicate where the game was played in the note (kitchen table, fnm, mtgo, RC, etc.).
 
 From these entries, the system automatically computes metagame metrics and produces visuals like those below.
 
@@ -125,6 +126,8 @@ Here’s a simplified overview of the process:
 
 
 ## Acknowledgments
+
+A particular mention goes to the Roazhon DC team, which initiated the project and gave precious feedback.
 
 Huge thanks to **Aliquanto** and **Jiliac**, whose R graphic styles inspired the look of these visualizations.
 
