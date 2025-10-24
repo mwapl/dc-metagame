@@ -21,7 +21,6 @@ We think that this silly project deserve a bit more results than our
 small local community now, and that everyone should have access to those
 informations.
 
----
 
 ## 💾 The Project
 
@@ -37,11 +36,9 @@ Other fields are optional but can help us fix errors or provide richer context.
 
 From these entries, the system automatically computes metagame metrics and produces visuals like those below.
 
----
-
 ## 📊 Metagame Overview
 
-The plots below summarize data collected since the most recent Duel Commander banlist.  
+The plots below summarize data collected since the most recent **[Duel Commander banlist](https://www.duelcommander.org/banlist/)**.  
 They highlight the **top 20 command zones** by number of recorded games.
 
 ### Matchup matrix
@@ -85,7 +82,6 @@ Try out the **[interactive Shiny app](https://5uwf89-mathieu-laurent.shinyapps.i
 > ⚠️ *Note:* The app is hosted for free on [shinyapps.io](https://www.shinyapps.io/),  
 > so it may occasionally be unavailable due to hosting limits.
 
----
 
 ## 🏆 For Tournament Organizers
 
@@ -102,7 +98,6 @@ between pairings and your decklist entry.
 
 > 🧰 Coming soon: an online version of those explainations with all the formating tools needed.
 
----
 
 ## 🔍 How It Works
 
@@ -129,13 +124,11 @@ Here’s a simplified overview of the process:
 
    The plots are embedded here on this site, automatically updated every evening with **Quarto**.
 
----
 
 ## Acknowledgments
 
 Huge thanks to **Aliquanto** and **Jiliac**, whose R graphic styles inspired the look of these visualizations.
 
----
 
 > 💡 *This site is built and deployed automatically using GitHub Actions and GitHub Pages.*  
 > Each day, new game data is fetched, analyzed, and visualized — keeping the dashboard up to date for everyone.
