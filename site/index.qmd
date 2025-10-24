@@ -55,15 +55,8 @@ It should be read as: **“Row has X% win rate against Column.”**
 This gives a quick overview of which decks tend to overperform or struggle in specific pairings.
 
 ### Winrate confidence intervals
-::: {#Winrate-ci}
-<object
-  type="image/svg+xml"
-  data="/dc-metagame/plots/winrate_ci.svg"
-  width="90%"
-  height="480"
-  style="max-width: 900px; margin: auto; display: block; border:none;">
-</object>
-:::
+
+![](plots/winrate_ci.svg){.lightbox}
 
 This chart shows each deck’s **average win rate** along with its **95% confidence interval** -
 that is, the range within which the *true* win rate is expected to fall 95% of the time given current data.

@@ -362,8 +362,7 @@ generate_winrate_with_ci_plot <- function(tier_plot_data) {
       ) +
       labs(
         title = "DC Win Rates",
-        subtitle = "Bars show 95% confidence intervals",
-        x = "Win Rate"
+        subtitle = "Bars show 95% confidence intervals"
       ) +
       geom_text(aes(label = sprintf("%.1f%%", winrate * 100),
                     x =  101,fontface = "bold"),
@@ -376,7 +375,7 @@ generate_winrate_with_ci_plot <- function(tier_plot_data) {
         plot.title = element_text(face = "bold", size = 18, hjust = 0.44),
         plot.subtitle = element_text(size = 12, hjust = 0.44, color ="#bcbcbc"),
         axis.title.y = element_blank(),
-        axis.title.x = element_text(size = 11, margin = margin(t = 10)),
+        axis.title.x = element_blank(),
         axis.text.y = element_text(size = 12),
         axis.text.x = element_text(size = 10),
         legend.position = "none",
