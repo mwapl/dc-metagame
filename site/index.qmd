@@ -7,7 +7,7 @@ title: "French Duel Commander Metagame Project"
 Welcome to the **Duel Commander Metagame Dashboard** — a small community-driven project.
 
 This project started from a small local experiment in Rennes,
-France. The question was simple: *could we prepare for tournaments
+France. The question was simple: *could we prepare for tournaments more
 seriously?* People started thinking about logging their games in
 some sort of data sheets. That's when I decided to come up with this
 *project*.
