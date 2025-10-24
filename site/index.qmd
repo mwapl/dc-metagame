@@ -29,8 +29,8 @@ Players can easily record their games using this **[submission form](https://scr
 
 The form is essentially a stylized Google Form (see *How It Works* below for details).  
 The most important fields are:
-- **Match result**  
-- **Command zones** (both your and your opponent’s)
+  - **Match result**  
+  - **Command zones** (both your and your opponent’s)
 
 Other fields are optional but can help us fix errors or provide richer context.
 
@@ -84,6 +84,7 @@ between pairings and your decklist entry.
 Here’s a simplified overview of the process:
 
 1. **Game data collection**
+
    Players record their match results through a public form.
    This form is actually a custom Google Apps Script that mimics a standard Google Form but adds smarter behavior:
    - Auto-completion for CZ
@@ -91,13 +92,16 @@ Here’s a simplified overview of the process:
    - Dynamic synchronization of legal commanders retrieved directly from Scryfall
 
 2. **Automated data retrieval**
+
    A scheduled GitHub Action runs a Python script to download the form responses from the linked google sheet.
 
-3. **Data processing & visualization**  
+3. **Data processing & visualization**
+
    **R** scripts preprocess the data and generate static interactive plots with **ggplot2** and **plotly**. A dynamic page
    allowing to select the number of command zones and the time period is also contructed through **shiny app**.
 
-4. **Static website build**  
+4. **Static website build**
+
    The plots are embedded here on this site, automatically updated every evening with **Quarto**.
 
 ---
