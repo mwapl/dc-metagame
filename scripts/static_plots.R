@@ -35,4 +35,4 @@ winrate_ci <- generate_winrate_with_ci_plot(tier_plot_data)
 # Save as standalone HTML fragments
 htmlwidgets::saveWidget(matchup_matrix, "site/plots/matchup_matrix.html", selfcontained = TRUE)
 htmlwidgets::saveWidget(metagame_share, "site/plots/metagame_share.html", selfcontained = TRUE)
-#htmlwidgets::saveWidget(winrate_ci, "site/plots/winrate_ci.html", selfcontained = TRUE)
+htmlwidgets::saveWidget(plotly(winrate_ci), "site/plots/winrate_ci.html", selfcontained = TRUE)
