@@ -41,6 +41,9 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-cd884f2855776405ca61470c593c983e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -193,10 +196,7 @@ They highlight the <strong>top 20 command zones</strong> by number of recorded g
 </section>
 <section id="winrate-confidence-intervals" class="level3">
 <h3 class="anchored" data-anchor-id="winrate-confidence-intervals">Winrate confidence intervals</h3>
-<div id="Winrate-ci">
-<object type="image/svg+xml" data="/dc-metagame/plots/winrate_ci.svg" width="90%" height="480" style="max-width: 900px; margin: auto; display: block; border:none;">
-</object>
-</div>
+<p><a href="plots/winrate_ci.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="plots/winrate_ci.svg" class="img-fluid"></a></p>
 <p>This chart shows each deck’s <strong>average win rate</strong> along with its <strong>95% confidence interval</strong> - that is, the range within which the <em>true</em> win rate is expected to fall 95% of the time given current data.</p>
 <p><em>A few important notes</em>: - Confidence intervals become <strong>less reliable</strong> when the number of recorded games is low. - Average win rates are meta-dependent - they reflect performance against the decks actually played in this dataset. If your local metagame differs significantly, results may vary.</p>
 </section>
@@ -669,6 +669,38 @@ Each day, new game data is fetched, analyzed, and visualized — keeping the das
 </div>
   </div>
 </footer>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 
