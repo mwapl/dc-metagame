@@ -56,7 +56,13 @@ This gives a quick overview of which decks tend to overperform or struggle in sp
 
 ### Winrate confidence intervals
 ::: {#Winrate-ci}
-<iframe src="plots/winrate_ci.svg" width="100%" height="600" style="border:none;"></iframe>
+<object
+  type="image/svg+xml"
+  data="/dc-metagame/plots/winrate_ci.svg"
+  width="90%"
+  height="480"
+  style="max-width: 900px; margin: auto; display: block; border:none;">
+</object>
 :::
 
 This chart shows each deck’s **average win rate** along with its **95% confidence interval** -
