@@ -123,6 +123,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#metagame-overview" id="toc-metagame-overview" class="nav-link" data-scroll-target="#metagame-overview">📊 Metagame Overview</a>
   <ul class="collapse">
   <li><a href="#matchup-matrix" id="toc-matchup-matrix" class="nav-link" data-scroll-target="#matchup-matrix">Matchup matrix</a></li>
+  <li><a href="#winrate-confidence-intervals" id="toc-winrate-confidence-intervals" class="nav-link" data-scroll-target="#winrate-confidence-intervals">Winrate confidence intervals</a></li>
   <li><a href="#metagame-share" id="toc-metagame-share" class="nav-link" data-scroll-target="#metagame-share">Metagame Share</a></li>
   </ul></li>
   <li><a href="#for-tournament-organizers" id="toc-for-tournament-organizers" class="nav-link" data-scroll-target="#for-tournament-organizers">🏆 For Tournament Organizers</a></li>
@@ -159,21 +160,23 @@ ul.task-list li input[type="checkbox"] {
 <p>This project started from a small local experiment in Rennes, France. The question was simple: <em>could we prepare for tournaments seriously?</em> People started thinking about logging their games in some sort of data sheets. That’s when I decided to come up with this <em>project</em>.</p>
 <p>It started with a few games here and there registered by friends. A week after, I was recording every local FNM games results with some sort of automation. A month later, I plugged in the first 100 player tournament data.</p>
 <p>We think that this silly project deserve a bit more results than our small local community now, and that everyone should have access to those informations.</p>
-<hr>
 </section>
 <section id="the-project" class="level2">
 <h2 class="anchored" data-anchor-id="the-project">💾 The Project</h2>
 <p>Players can easily record their games using this <strong><a href="https://script.google.com/macros/s/AKfycbypLu4K7h7oZ7k6kKpNl0uWtzl0QRcZQJB4Axfd--1vffgGcsnXSPUsHlWCpCusXva9/exec">submission form</a></strong>.</p>
 <p>The form is essentially a stylized Google Form (see <em>How It Works</em> below for details).<br>
-The most important fields are: - <strong>Match result</strong><br>
-- <strong>Command zones</strong> (both your and your opponent’s)</p>
+The most important fields are:</p>
+<ul>
+<li><strong>Match result</strong><br>
+</li>
+<li><strong>Command zones</strong> (both your and your opponent’s)</li>
+</ul>
 <p>Other fields are optional but can help us fix errors or provide richer context.</p>
 <p>From these entries, the system automatically computes metagame metrics and produces visuals like those below.</p>
-<hr>
 </section>
 <section id="metagame-overview" class="level2">
 <h2 class="anchored" data-anchor-id="metagame-overview">📊 Metagame Overview</h2>
-<p>The plots below summarize data collected since the most recent Duel Commander banlist.<br>
+<p>The plots below summarize data collected since the most recent <strong><a href="https://www.duelcommander.org/banlist/">Duel Commander banlist</a></strong>.<br>
 They highlight the <strong>top 20 command zones</strong> by number of recorded games.</p>
 <section id="matchup-matrix" class="level3">
 <h3 class="anchored" data-anchor-id="matchup-matrix">Matchup matrix</h3>
@@ -181,6 +184,21 @@ They highlight the <strong>top 20 command zones</strong> by number of recorded g
 <iframe src="plots/matchup_matrix.html" width="100%" height="600" style="border:none;">
 </iframe>
 </div>
+<p>This matrix visualizes how each command zone performs <strong>against every other</strong>. It should be read as: <strong>“Row has X% win rate against Column.”</strong></p>
+<ul>
+<li>The diagonal is fixed at <strong>50%</strong> for easier visual comparison.</li>
+<li>Hovering over a cell displays the <strong>exact number of games</strong> contributing to that matchup.</li>
+</ul>
+<p>This gives a quick overview of which decks tend to overperform or struggle in specific pairings.</p>
+</section>
+<section id="winrate-confidence-intervals" class="level3">
+<h3 class="anchored" data-anchor-id="winrate-confidence-intervals">Winrate confidence intervals</h3>
+<div id="Winrate-ci">
+<iframe src="plots/winrate_ci.html" width="100%" height="600" style="border:none;">
+</iframe>
+</div>
+<p>This chart shows each deck’s <strong>average win rate</strong> along with its <strong>95% confidence interval</strong> - that is, the range within which the <em>true</em> win rate is expected to fall 95% of the time given current data.</p>
+<p><em>A few important notes</em>: - Confidence intervals become <strong>less reliable</strong> when the number of recorded games is low. - Average win rates are meta-dependent - they reflect performance against the decks actually played in this dataset. If your local metagame differs significantly, results may vary.</p>
 </section>
 <section id="metagame-share" class="level3">
 <h3 class="anchored" data-anchor-id="metagame-share">Metagame Share</h3>
@@ -188,13 +206,13 @@ They highlight the <strong>top 20 command zones</strong> by number of recorded g
 <iframe src="plots/metagame_share.html" width="100%" height="600" style="border:none;">
 </iframe>
 </div>
+<p>This plot ranks decks by their <strong>share of recorded games</strong> in the dataset. The percentage represents how often each command zone appeared, and hovering over a bar reveals the <strong>exact number of games</strong> played.</p>
 <p>Want to explore further?<br>
 Try out the <strong><a href="https://5uwf89-mathieu-laurent.shinyapps.io/DCMetagame-app/">interactive Shiny app</a></strong> — look at even more plots, compare time periods, or dive into specific matchups.</p>
 <blockquote class="blockquote">
 <p>⚠️ <em>Note:</em> The app is hosted for free on <a href="https://www.shinyapps.io/">shinyapps.io</a>,<br>
 so it may occasionally be unavailable due to hosting limits.</p>
 </blockquote>
-<hr>
 </section>
 </section>
 <section id="for-tournament-organizers" class="level2">
@@ -205,7 +223,6 @@ so it may occasionally be unavailable due to hosting limits.</p>
 <blockquote class="blockquote">
 <p>🧰 Coming soon: an online version of those explainations with all the formating tools needed.</p>
 </blockquote>
-<hr>
 </section>
 <section id="how-it-works" class="level2">
 <h2 class="anchored" data-anchor-id="how-it-works">🔍 How It Works</h2>
@@ -225,12 +242,10 @@ so it may occasionally be unavailable due to hosting limits.</p>
 <li><p><strong>Static website build</strong></p>
 <p>The plots are embedded here on this site, automatically updated every evening with <strong>Quarto</strong>.</p></li>
 </ol>
-<hr>
 </section>
 <section id="acknowledgments" class="level2">
 <h2 class="anchored" data-anchor-id="acknowledgments">Acknowledgments</h2>
 <p>Huge thanks to <strong>Aliquanto</strong> and <strong>Jiliac</strong>, whose R graphic styles inspired the look of these visualizations.</p>
-<hr>
 <blockquote class="blockquote">
 <p>💡 <em>This site is built and deployed automatically using GitHub Actions and GitHub Pages.</em><br>
 Each day, new game data is fetched, analyzed, and visualized — keeping the dashboard up to date for everyone.</p>

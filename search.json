@@ -18,14 +18,14 @@
     "href": "index.html#the-project",
     "title": "French Duel Commander Metagame Project",
     "section": "💾 The Project",
-    "text": "💾 The Project\nPlayers can easily record their games using this submission form.\nThe form is essentially a stylized Google Form (see How It Works below for details).\nThe most important fields are: - Match result\n- Command zones (both your and your opponent’s)\nOther fields are optional but can help us fix errors or provide richer context.\nFrom these entries, the system automatically computes metagame metrics and produces visuals like those below."
+    "text": "💾 The Project\nPlayers can easily record their games using this submission form.\nThe form is essentially a stylized Google Form (see How It Works below for details).\nThe most important fields are:\n\nMatch result\n\nCommand zones (both your and your opponent’s)\n\nOther fields are optional but can help us fix errors or provide richer context.\nFrom these entries, the system automatically computes metagame metrics and produces visuals like those below."
   },
   {
     "objectID": "index.html#metagame-overview",
     "href": "index.html#metagame-overview",
     "title": "French Duel Commander Metagame Project",
     "section": "📊 Metagame Overview",
-    "text": "📊 Metagame Overview\nThe plots below summarize data collected since the most recent Duel Commander banlist.\nThey highlight the top 20 command zones by number of recorded games.\n\nMatchup matrix\n\n\n\n\n\n\nMetagame Share\n\n\n\n\nWant to explore further?\nTry out the interactive Shiny app — look at even more plots, compare time periods, or dive into specific matchups.\n\n⚠️ Note: The app is hosted for free on shinyapps.io,\nso it may occasionally be unavailable due to hosting limits."
+    "text": "📊 Metagame Overview\nThe plots below summarize data collected since the most recent Duel Commander banlist.\nThey highlight the top 20 command zones by number of recorded games.\n\nMatchup matrix\n\n\n\n\nThis matrix visualizes how each command zone performs against every other. It should be read as: “Row has X% win rate against Column.”\n\nThe diagonal is fixed at 50% for easier visual comparison.\nHovering over a cell displays the exact number of games contributing to that matchup.\n\nThis gives a quick overview of which decks tend to overperform or struggle in specific pairings.\n\n\nWinrate confidence intervals\n\n\n\n\nThis chart shows each deck’s average win rate along with its 95% confidence interval - that is, the range within which the true win rate is expected to fall 95% of the time given current data.\nA few important notes: - Confidence intervals become less reliable when the number of recorded games is low. - Average win rates are meta-dependent - they reflect performance against the decks actually played in this dataset. If your local metagame differs significantly, results may vary.\n\n\nMetagame Share\n\n\n\n\nThis plot ranks decks by their share of recorded games in the dataset. The percentage represents how often each command zone appeared, and hovering over a bar reveals the exact number of games played.\nWant to explore further?\nTry out the interactive Shiny app — look at even more plots, compare time periods, or dive into specific matchups.\n\n⚠️ Note: The app is hosted for free on shinyapps.io,\nso it may occasionally be unavailable due to hosting limits."
   },
   {
     "objectID": "index.html#for-tournament-organizers",
@@ -46,6 +46,6 @@
     "href": "index.html#acknowledgments",
     "title": "French Duel Commander Metagame Project",
     "section": "Acknowledgments",
-    "text": "Acknowledgments\nHuge thanks to Aliquanto and Jiliac, whose R graphic styles inspired the look of these visualizations.\n\n\n💡 This site is built and deployed automatically using GitHub Actions and GitHub Pages.\nEach day, new game data is fetched, analyzed, and visualized — keeping the dashboard up to date for everyone."
+    "text": "Acknowledgments\nHuge thanks to Aliquanto and Jiliac, whose R graphic styles inspired the look of these visualizations.\n\n💡 This site is built and deployed automatically using GitHub Actions and GitHub Pages.\nEach day, new game data is fetched, analyzed, and visualized — keeping the dashboard up to date for everyone."
   }
 ]
