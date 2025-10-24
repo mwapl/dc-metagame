@@ -55,7 +55,7 @@ They highlight the **top 20 command zones** by number of recorded games.
 :::
 
 Want to explore further?  
-Try out the **[interactive Shiny app](https://your-shinyapps-url.shinyapps.io/metagame/)** — look at even more plots, compare time periods, or dive into specific matchups.
+Try out the **[interactive Shiny app](https://5uwf89-mathieu-laurent.shinyapps.io/DCMetagame-app/)** — look at even more plots, compare time periods, or dive into specific matchups.
 
 > ⚠️ *Note:* The app is hosted for free on [shinyapps.io](https://www.shinyapps.io/),  
 > so it may occasionally be unavailable due to hosting limits.
