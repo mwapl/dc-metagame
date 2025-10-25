@@ -63,8 +63,9 @@ This chart shows each deck’s **average win rate** along with its **95% confide
 that is, the range within which the *true* win rate is expected to fall 95% of the time given current data.
 
 *A few important notes*:
+
 - Confidence intervals become **less reliable** when the number of recorded games is low.
-- Average win rates are meta-dependent - they reflect performance against the decks actually played in this dataset. If your local metagame differs significantly, results may vary.
+- Average win rates are meta-dependent—they reflect performance against the decks actually played in this dataset. If your local metagame differs significantly, results may vary.
 
 
 ### Metagame Share
