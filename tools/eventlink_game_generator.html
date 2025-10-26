@@ -95,10 +95,17 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link active" href="../tools/eventlink_game_generator.html" aria-current="page"> 
-<span class="menu-text">Tournament organizer tool</span></a>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-tournament-organizer-tool" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Tournament organizer tool</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-tournament-organizer-tool">    
+        <li>
+    <a class="dropdown-item" href="../tools/eventlink_game_generator.html">
+ <span class="dropdown-text">Generate data for matchups</span></a>
   </li>  
+    </ul>
+  </li>
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
@@ -117,8 +124,15 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#inputs" id="toc-inputs" class="nav-link active" data-scroll-target="#inputs">Inputs</a></li>
+  <li><a href="#chrome-plugin" id="toc-chrome-plugin" class="nav-link" data-scroll-target="#chrome-plugin">Chrome Plugin</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -235,8 +249,27 @@ ${pyCode}
 }
 main();
 </script>
+<hr>
+<section id="inputs" class="level3">
+<h3 class="anchored" data-anchor-id="inputs">Inputs</h3>
+<ul>
+<li><strong>Player-Deck mapping</strong> is expecting a <strong><a href="https://en.wikipedia.org/wiki/Comma-separated_values">CSV file</a></strong>, using ‘,’ (comma) as separator, corresponding to the header “Player”,“Deck”.</li>
+</ul>
+<blockquote class="blockquote">
+<p>🧰 Coming soon: some way to generate such file from a table Player &lt;-&gt; DeckURL</p>
+</blockquote>
+<ul>
+<li>Results file must be a CSV file too, also using ‘,’ (comma) as separator, corresponding to the header Table,“Player 1”,“Player 2”,“MatchResult”. This one can be generated easily from eventlink using a small chrome plugin (see <strong>Chrome Plugin</strong> below).</li>
+</ul>
+</section>
+<section id="chrome-plugin" class="level3">
+<h3 class="anchored" data-anchor-id="chrome-plugin">Chrome Plugin</h3>
+<p>A Google Chrome plugin is a simple small code that runs locally within your browser. In this case, it simply look at the current web page, and tries to read the values for the players, tables and game results.</p>
+<p>To use the plugin, start by downloading <strong><a href="eventLinkPlugin.zip">this zip file</a></strong> containing everything required. Unzip it somewhere you can find it, then open Google Chrome. Go into “Extension” &gt; “Manage extensions”. Be sure to check the “Developer mode” at the top right corner. Then click “Load unpacked” and select the directory you just downloaded (eventLinkPlugin).</p>
+<p>Congrats! You just installed the plugin. Now if you click on the extensions symbol again, you should see it. For convenience, you can also pin it, so it keeps appearing at the top of your browser. Open an eventlink page, and select a round that has finished. Click on the “extract results”, and that’s it. You can now paste the result in a CSV file. Be carefull if you provide multiple rounds at once, the header (the line “Table,Player 1,Player 2, MatchResult”) will show multiple times. Simply remove each occurence, except for the first one.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
