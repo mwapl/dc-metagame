@@ -8,6 +8,8 @@ website:
     left:
       - text: "Home"
         href: index.qmd
+      - text: "Tournament organizer tool"
+        href: tools/eventlink_game_generator.qmd
     right:
       - icon: github
         href: https://github.com/mwapl/dc-metagame

@@ -1,0 +1,104 @@
+---
+title: "Tournament Game Generator"
+resources:
+  - generate_games_from_event_link.py
+---
+
+Use this page to generate formatted match results directly in your browser.
+Everything runs locally — no upload to any server.
+
+```{=html}
+<div id="py-tool" class="card p-3 mt-3">
+  <h4>Generate games from CSVs</h4>
+
+  <div class="mb-3">
+    <label for="correspondenceFile" class="form-label">Player–Deck mapping (CSV)</label>
+    <input type="file" id="correspondenceFile" class="form-control">
+  </div>
+
+  <div class="mb-3">
+    <label for="resultsFile" class="form-label">Results file (CSV)</label>
+    <input type="file" id="resultsFile" class="form-control">
+  </div>
+
+  <button id="runButton" class="btn btn-primary">Run generator</button>
+  <button id="downloadButton" class="btn btn-success ms-2" style="display:none;">📥 Download results</button>
+
+  <div class="mt-3">
+    <label for="output" class="form-label">Errors / Logs</label>
+    <textarea id="output" class="form-control" rows="10"
+      placeholder="Any errors will appear here..." readonly></textarea>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/pyodide/v0.26.2/full/pyodide.js"></script>
+<script>
+async function main() {
+  const pyodide = await loadPyodide();
+  await pyodide.loadPackage("pandas");
+
+  const runButton = document.getElementById("runButton");
+  const downloadButton = document.getElementById("downloadButton");
+  const outBox = document.getElementById("output");
+
+  runButton.onclick = async () => {
+    const corr = document.getElementById("correspondenceFile").files[0];
+    const res = document.getElementById("resultsFile").files[0];
+    if (!corr || !res) {
+      alert("Please upload both CSV files");
+      return;
+    }
+
+    // Reset state
+    outBox.value = "";
+    downloadButton.style.display = "none";
+
+    const pyCode = await fetch("generate_games_from_event_link.py").then(r => r.text());
+    pyodide.FS.writeFile("corr.csv", await corr.text());
+    pyodide.FS.writeFile("res.csv", await res.text());
+
+    // Capture stdout/stderr
+    let stdout = "";
+    let stderr = "";
+    pyodide.setStdout({ batched: (s) => { stdout += s; } });
+    pyodide.setStderr({ batched: (s) => { stderr += s; } });
+
+    const wrapped = `
+import sys, io, warnings
+warnings.filterwarnings("ignore", category=DeprecationWarning)
+sys.argv = ['script','corr.csv','res.csv']
+${pyCode}
+    `;
+
+    outBox.value = "⏳ Running...";
+    try {
+      await pyodide.runPythonAsync(wrapped);
+
+    if (stderr.trim()) {
+        const normalized = stderr.replace(/\r?\n/g, "\r\n");
+        outBox.value = "❌ Error(s):\n" + normalized;
+      } 
+      // No error → enable download
+      const normalized = stdout.replace(/\r?\n/g, "\r\n");
+      const blob = new Blob([normalized], { type: "text/csv;charset=utf-8" });
+      const url = URL.createObjectURL(blob);
+      downloadButton.onclick = () => {
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = "generated_results.csv";
+        a.click();
+        URL.revokeObjectURL(url);
+      };
+      downloadButton.style.display = "inline-block";
+      outBox.value = "✅ Generation successful! Click 'Download results' to save the CSV.";
+      
+    } catch (err) {
+      const normalized = stderr.replace(/\r?\n/g, "\r\n");
+      outBox.value = "❌ Error(s):\n" + normalized;;
+      console.error(err);
+    }
+  };
+}
+main();
+</script>
+```
