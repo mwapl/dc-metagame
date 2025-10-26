@@ -2,6 +2,7 @@
 title: "Tournament Game Generator"
 resources:
   - generate_games_from_event_link.py
+  - eventLinkPlugin.zip 
 ---
 
 Use this page to generate formatted match results directly in your browser.
@@ -102,3 +103,33 @@ ${pyCode}
 main();
 </script>
 ```
+
+---
+
+### Inputs
+
+- **Player-Deck mapping** is expecting a **[CSV file](https://en.wikipedia.org/wiki/Comma-separated_values)**, using
+',' (comma) as separator, corresponding to the header "Player","Deck".
+
+> 🧰 Coming soon: some way to generate such file from a table Player <-> DeckURL
+
+
+- Results file must be a CSV file too, also using ',' (comma) as separator, corresponding to the header
+  Table,"Player 1","Player 2","MatchResult". This one can be generated easily from eventlink using a small chrome
+  plugin (see **Chrome Plugin** below).
+
+### Chrome Plugin
+
+  A Google Chrome plugin is a simple small code that runs locally within your browser. In this case, it simply look at
+  the current web page, and tries to read the values for the players, tables and game results.
+
+  To use the plugin, start by downloading **[this zip file](eventLinkPlugin.zip)** containing everything required.
+  Unzip it somewhere you can find it, then open Google Chrome. Go into  "Extension" > "Manage extensions". Be sure
+  to check the "Developer mode" at the top right corner. Then click "Load unpacked" and select the directory you just
+  downloaded (eventLinkPlugin).
+
+  Congrats! You just installed the plugin. Now if you click on the extensions symbol again, you should see it.
+  For convenience, you can also pin it, so it keeps appearing at the top of your browser. Open an eventlink page,
+  and select a round that has finished. Click on the "extract results", and that's it. You can now paste the result
+  in a CSV file. Be carefull if you provide multiple rounds at once, the header (the line "Table,Player 1,Player 2,
+  MatchResult") will show multiple times. Simply remove each occurence, except for the first one.
