@@ -1,5 +1,12 @@
 [
   {
+    "objectID": "tools/eventlink_game_generator.html",
+    "href": "tools/eventlink_game_generator.html",
+    "title": "Tournament Game Generator",
+    "section": "",
+    "text": "Use this page to generate formatted match results directly in your browser. Everything runs locally — no upload to any server.\n\n  Generate games from CSVs\n\n  \n    Player–Deck mapping (CSV)\n    \n  \n\n  \n    Results file (CSV)\n    \n  \n\n  Run generator\n  📥 Download results\n\n  \n    Errors / Logs"
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "French Duel Commander Metagame Project",

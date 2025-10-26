@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>French Duel Commander Metagame Project – Duel Commander Metagame</title>
+<title>Tournament Game Generator – Duel Commander Metagame</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,27 +23,24 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-707d8167ce6003fca903bfe2be84ab7f.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-cd884f2855776405ca61470c593c983e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
-<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
-<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
-<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-707d8167ce6003fca903bfe2be84ab7f.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-cd884f2855776405ca61470c593c983e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -82,9 +79,9 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
     </a>
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Duel Commander Metagame</span>
     </a>
   </div>
@@ -95,11 +92,11 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./tools/eventlink_game_generator.html"> 
+    <a class="nav-link active" href="../tools/eventlink_game_generator.html" aria-current="page"> 
 <span class="menu-text">Tournament organizer tool</span></a>
   </li>  
 </ul>
@@ -120,31 +117,15 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">🎯 Overview</a></li>
-  <li><a href="#the-project" id="toc-the-project" class="nav-link" data-scroll-target="#the-project">💾 The Project</a></li>
-  <li><a href="#metagame-overview" id="toc-metagame-overview" class="nav-link" data-scroll-target="#metagame-overview">📊 Metagame Overview</a>
-  <ul class="collapse">
-  <li><a href="#matchup-matrix" id="toc-matchup-matrix" class="nav-link" data-scroll-target="#matchup-matrix">Matchup matrix</a></li>
-  <li><a href="#winrate-confidence-intervals" id="toc-winrate-confidence-intervals" class="nav-link" data-scroll-target="#winrate-confidence-intervals">Winrate confidence intervals</a></li>
-  <li><a href="#metagame-share" id="toc-metagame-share" class="nav-link" data-scroll-target="#metagame-share">Metagame Share</a></li>
-  </ul></li>
-  <li><a href="#for-tournament-organizers" id="toc-for-tournament-organizers" class="nav-link" data-scroll-target="#for-tournament-organizers">🏆 For Tournament Organizers</a></li>
-  <li><a href="#how-it-works" id="toc-how-it-works" class="nav-link" data-scroll-target="#how-it-works">🔍 How It Works</a></li>
-  <li><a href="#acknowledgments" id="toc-acknowledgments" class="nav-link" data-scroll-target="#acknowledgments">Acknowledgments</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">French Duel Commander Metagame Project</h1>
+<h1 class="title">Tournament Game Generator</h1>
 </div>
 
 
@@ -161,107 +142,101 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="overview" class="level2">
-<h2 class="anchored" data-anchor-id="overview">🎯 Overview</h2>
-<p>Welcome to the <strong>Duel Commander Metagame Dashboard</strong> — a small community-driven project.</p>
-<p>This project started from a small local experiment in Rennes, France. The question was simple: <em>could we prepare for tournaments more seriously?</em> People started thinking about logging their games in some sort of data sheets. That’s when I decided to come up with this <em>project</em>.</p>
-<p>It started with a few games here and there registered by friends. A week after, I was recording every local FNM games results with some sort of automation. A month later, I plugged in the first 100 player tournament data.</p>
-<p>We think that this silly project deserve a bit more results than our small local community now, and that everyone should have access to those informations.</p>
-</section>
-<section id="the-project" class="level2">
-<h2 class="anchored" data-anchor-id="the-project">💾 The Project</h2>
-<p>Players can easily record their games using this <strong><a href="https://script.google.com/macros/s/AKfycbypLu4K7h7oZ7k6kKpNl0uWtzl0QRcZQJB4Axfd--1vffgGcsnXSPUsHlWCpCusXva9/exec">submission form</a></strong>.</p>
-<p>The form is essentially a stylized Google Form (see <em>How It Works</em> below for details).<br>
-The most important fields are:</p>
-<ul>
-<li><strong>Match result</strong><br>
-</li>
-<li><strong>Command zones</strong> (both your and your opponent’s)</li>
-</ul>
-<p>Other fields are optional but can help us fix errors or provide richer context. For instance, you might want to indicate where the game was played in the note (kitchen table, fnm, mtgo, RC, etc.).</p>
-<p>From these entries, the system automatically computes metagame metrics and produces visuals like those below.</p>
-</section>
-<section id="metagame-overview" class="level2">
-<h2 class="anchored" data-anchor-id="metagame-overview">📊 Metagame Overview</h2>
-<p>The plots below summarize data collected since the most recent <strong><a href="https://www.duelcommander.org/banlist/">Duel Commander banlist</a></strong>.<br>
-They highlight the <strong>top 20 command zones</strong> by number of recorded games.</p>
-<section id="matchup-matrix" class="level3">
-<h3 class="anchored" data-anchor-id="matchup-matrix">Matchup matrix</h3>
-<div id="Matchup-Matrix">
-<iframe src="plots/matchup_matrix.html" width="100%" height="600" style="border:none;">
-</iframe>
+<p>Use this page to generate formatted match results directly in your browser. Everything runs locally — no upload to any server.</p>
+<div id="py-tool" class="card p-3 mt-3">
+  <h4 class="anchored">Generate games from CSVs</h4>
+
+  <div class="mb-3">
+    <label for="correspondenceFile" class="form-label">Player–Deck mapping (CSV)</label>
+    <input type="file" id="correspondenceFile" class="form-control">
+  </div>
+
+  <div class="mb-3">
+    <label for="resultsFile" class="form-label">Results file (CSV)</label>
+    <input type="file" id="resultsFile" class="form-control">
+  </div>
+
+  <button id="runButton" class="btn btn-primary">Run generator</button>
+  <button id="downloadButton" class="btn btn-success ms-2" style="display:none;">📥 Download results</button>
+
+  <div class="mt-3">
+    <label for="output" class="form-label">Errors / Logs</label>
+    <textarea id="output" class="form-control" rows="10" placeholder="Any errors will appear here..." readonly=""></textarea>
+  </div>
 </div>
-<p>This matrix visualizes how each command zone performs <strong>against every other</strong>. It should be read as: <strong>“Row has X% win rate against Column.”</strong></p>
-<ul>
-<li>The diagonal is fixed at <strong>50%</strong> for easier visual comparison.</li>
-<li>Hovering over a cell displays the <strong>exact number of games</strong> contributing to that matchup.</li>
-</ul>
-<p>This gives a quick overview of which decks tend to overperform or struggle in specific pairings.</p>
-</section>
-<section id="winrate-confidence-intervals" class="level3">
-<h3 class="anchored" data-anchor-id="winrate-confidence-intervals">Winrate confidence intervals</h3>
-<p><a href="plots/winrate_ci.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="plots/winrate_ci.svg" class="img-fluid"></a></p>
-<p>This chart shows each deck’s <strong>average win rate</strong> along with its <strong>95% confidence interval</strong> - that is, the range within which the <em>true</em> win rate is expected to fall 95% of the time given current data.</p>
-<p><em>A few important notes</em>:</p>
-<ul>
-<li>Confidence intervals become <strong>less reliable</strong> when the number of recorded games is low.</li>
-<li>Average win rates are meta-dependent—they reflect performance against the decks actually played in this dataset. If your local metagame differs significantly, results may vary.</li>
-</ul>
-</section>
-<section id="metagame-share" class="level3">
-<h3 class="anchored" data-anchor-id="metagame-share">Metagame Share</h3>
-<div id="metagame-share">
-<iframe src="plots/metagame_share.html" width="100%" height="600" style="border:none;">
-</iframe>
-</div>
-<p>This plot ranks decks by their <strong>share of recorded games</strong> in the dataset. The percentage represents how often each command zone appeared, and hovering over a bar reveals the <strong>exact number of games</strong> played.</p>
-<p>Want to explore further?<br>
-Try out the <strong><a href="https://5uwf89-mathieu-laurent.shinyapps.io/DCMetagame-app/">interactive Shiny app</a></strong> — look at even more plots, compare time periods, or dive into specific matchups.</p>
-<blockquote class="blockquote">
-<p>⚠️ <em>Note:</em> The app is hosted for free on <a href="https://www.shinyapps.io/">shinyapps.io</a>,<br>
-so it may occasionally be unavailable due to hosting limits.</p>
-</blockquote>
-</section>
-</section>
-<section id="for-tournament-organizers" class="level2">
-<h2 class="anchored" data-anchor-id="for-tournament-organizers">🏆 For Tournament Organizers</h2>
-<p>If you organize Duel Commander events, you can definitively help enrich the dataset!</p>
-<p>Typically, you will have a form of dataset matching each player name with a command zone and sone access to a running eventlink. If that’s the case, you can contact me directly on discord <span class="citation" data-cites="mwapl">@mwapl</span> and I will show you how to produce data entries.</p>
-<p>No dark magic here, only a light chrome extension to extract game results from eventlink, and a python script to match player names between pairings and your decklist entry.</p>
-<blockquote class="blockquote">
-<p>🧰 Coming soon: an online version of those explainations with all the formating tools needed.</p>
-</blockquote>
-</section>
-<section id="how-it-works" class="level2">
-<h2 class="anchored" data-anchor-id="how-it-works">🔍 How It Works</h2>
-<p>Here’s a simplified overview of the process:</p>
-<ol type="1">
-<li><p><strong>Game data collection</strong></p>
-<p>Players record their match results through a public form. This form is actually a custom Google Apps Script that mimics a standard Google Form but adds smarter behavior:</p>
-<ul>
-<li>Auto-completion for CZ</li>
-<li>Automatic detection of partners and backgrounds</li>
-<li>Dynamic synchronization of legal commanders retrieved directly from Scryfall</li>
-</ul></li>
-<li><p><strong>Automated data retrieval</strong></p>
-<p>A scheduled GitHub Action runs a Python script to download the form responses from the linked google sheet.</p></li>
-<li><p><strong>Data processing &amp; visualization</strong></p>
-<p><strong>R</strong> scripts preprocess the data and generate static interactive plots with <strong>ggplot2</strong> and <strong>plotly</strong>. A dynamic page allowing to select the number of command zones and the time period is also contructed through <strong>shiny app</strong>.</p></li>
-<li><p><strong>Static website build</strong></p>
-<p>The plots are embedded here on this site, automatically updated every evening with <strong>Quarto</strong>.</p></li>
-</ol>
-</section>
-<section id="acknowledgments" class="level2">
-<h2 class="anchored" data-anchor-id="acknowledgments">Acknowledgments</h2>
-<p>A particular mention goes to the Roazhon DC team, which initiated the project and gave precious feedback.</p>
-<p>Huge thanks to <strong>Aliquanto</strong> and <strong>Jiliac</strong>, whose R graphic styles inspired the look of these visualizations.</p>
-<blockquote class="blockquote">
-<p>💡 <em>This site is built and deployed automatically using GitHub Actions and GitHub Pages.</em><br>
-Each day, new game data is fetched, analyzed, and visualized — keeping the dashboard up to date for everyone.</p>
-</blockquote>
+
+<script src="https://cdn.jsdelivr.net/pyodide/v0.26.2/full/pyodide.js"></script>
+<script>
+async function main() {
+  const pyodide = await loadPyodide();
+  await pyodide.loadPackage("pandas");
+
+  const runButton = document.getElementById("runButton");
+  const downloadButton = document.getElementById("downloadButton");
+  const outBox = document.getElementById("output");
+
+  runButton.onclick = async () => {
+    const corr = document.getElementById("correspondenceFile").files[0];
+    const res = document.getElementById("resultsFile").files[0];
+    if (!corr || !res) {
+      alert("Please upload both CSV files");
+      return;
+    }
+
+    // Reset state
+    outBox.value = "";
+    downloadButton.style.display = "none";
+
+    const pyCode = await fetch("generate_games_from_event_link.py").then(r => r.text());
+    pyodide.FS.writeFile("corr.csv", await corr.text());
+    pyodide.FS.writeFile("res.csv", await res.text());
+
+    // Capture stdout/stderr
+    let stdout = "";
+    let stderr = "";
+    pyodide.setStdout({ batched: (s) => { stdout += s; } });
+    pyodide.setStderr({ batched: (s) => { stderr += s; } });
+
+    const wrapped = `
+import sys, io, warnings
+warnings.filterwarnings("ignore", category=DeprecationWarning)
+sys.argv = ['script','corr.csv','res.csv']
+${pyCode}
+    `;
+
+    outBox.value = "⏳ Running...";
+    try {
+      await pyodide.runPythonAsync(wrapped);
+
+    if (stderr.trim()) {
+        const normalized = stderr.replace(/\r?\n/g, "\r\n");
+        outBox.value = "❌ Error(s):\n" + normalized;
+      } 
+      // No error → enable download
+      const normalized = stdout.replace(/\r?\n/g, "\r\n");
+      const blob = new Blob([normalized], { type: "text/csv;charset=utf-8" });
+      const url = URL.createObjectURL(blob);
+      downloadButton.onclick = () => {
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = "generated_results.csv";
+        a.click();
+        URL.revokeObjectURL(url);
+      };
+      downloadButton.style.display = "inline-block";
+      outBox.value = "✅ Generation successful! Click 'Download results' to save the CSV.";
+      
+    } catch (err) {
+      const normalized = stderr.replace(/\r?\n/g, "\r\n");
+      outBox.value = "❌ Error(s):\n" + normalized;;
+      console.error(err);
+    }
+  };
+}
+main();
+</script>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -678,38 +653,6 @@ Each day, new game data is fetched, analyzed, and visualized — keeping the das
 </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
-(function() {
-  let previousOnload = window.onload;
-  window.onload = () => {
-    if (previousOnload) {
-      previousOnload();
-    }
-    lightboxQuarto.on('slide_before_load', (data) => {
-      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-      const href = trigger.getAttribute('href');
-      if (href !== null) {
-        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
-        if (imgEl !== null) {
-          const srcAttr = imgEl.getAttribute("src");
-          if (srcAttr && srcAttr.startsWith("data:")) {
-            slideConfig.href = srcAttr;
-          }
-        }
-      } 
-    });
-  
-    lightboxQuarto.on('slide_after_load', (data) => {
-      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(slideNode);
-      }
-    });
-  
-  };
-  
-})();
-          </script>
 
 
 
