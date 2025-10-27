@@ -17,7 +17,7 @@ label_map <- c(
   "Kellan, Planar Trailblazer" = "Kellan",
   "Kraum, Ludevic's Opus|Yoshimaru, Ever Faithful" = "Yoshi Kraum",
   "Norin, Swift Survivalist" = "Norin",
-  "Kefka, Court Mage" = "Kefka",
+  "Kefka, Court Mage // Kefka, Ruler of Ruin" = "Kefka",
   "Ketramose, the New Dawn" = "Ketramose",  
   "Leovold, Emissary of Trest" = "Leovold",
   "Lier, Disciple of the Drowned" = "Lier",
@@ -50,7 +50,9 @@ label_map <- c(
   "G'raha Tia, Scion Reborn" = "G'raha Tia",
   "Ravos, Soultender|Thrasios, Triton Hero" = "Thrasios X",
   "Sephiroth, Fabled SOLDIER // Sephiroth, One-Winged Angel" = "Sephiroth",
-  "Rograkh, Son of Rohgahh|Silas Renn, Seeker Adept" = "Rograkh&Silas"
+  "Rograkh, Son of Rohgahh|Silas Renn, Seeker Adept" = "Rograkh&Silas",
+  "Emet-Selch, Unsundered // Hades, Sorcerer of Eld" = "Emet",
+  "Taii Wakeen, Perfect Shot" = "Taii Wakeen"
 )
 
 
