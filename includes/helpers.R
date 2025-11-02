@@ -52,7 +52,8 @@ label_map <- c(
   "Sephiroth, Fabled SOLDIER // Sephiroth, One-Winged Angel" = "Sephiroth",
   "Rograkh, Son of Rohgahh|Silas Renn, Seeker Adept" = "Rograkh&Silas",
   "Emet-Selch, Unsundered // Hades, Sorcerer of Eld" = "Emet",
-  "Taii Wakeen, Perfect Shot" = "Taii Wakeen"
+  "Taii Wakeen, Perfect Shot" = "Taii Wakeen",
+  "Uharis, the Stormspinner" = "Spider-Man 2099"
 )
 
 
