@@ -78,23 +78,6 @@ format_data <- function (data) {
            label_map[data$Command.zone.du.joueur.2],
            data$Command.zone.du.joueur.2)
   
-  
-  # Define a function to determine winner
-  get_winner <- function(result, p1, p2) {
-    scores <- as.numeric(unlist(strsplit(result, "-")))
-    if (scores[1] > scores[2]) {
-      return(p1)
-    } else if (scores[1] < scores[2]) {
-      return(p2)
-    } else {
-      return("Draw")
-    }
-  }
-  
-  # Add a winner column
-  data$winner <- mapply(get_winner, data$Résultat.du.match..J1...J2., 
-                        data$Command.zone.du.joueur.1, data$Command.zone.du.joueur.2)
-  
   return(data)
 }
 
@@ -117,21 +100,21 @@ get_game_victory_data <- function (filtered_data) {
 
 
   tmp <- linearized_data %>%
-      group_by(CZ_player, CZ_oppo) %>%
-      summarise(wins = sum(wins), .groups = "drop")
+    dplyr::group_by(CZ_player, CZ_oppo) %>%
+    dplyr::summarise(wins = sum(wins), .groups = "drop")
     
   get_game_count <- function(czA, czB) {
       if (czA == czB)
         return(as.numeric(tmp %>%
-                            filter(CZ_player==czA, CZ_oppo==czA) %>%
-                            summarise(sum(wins))
+                            dplyr::filter(CZ_player==czA, CZ_oppo==czA) %>%
+                            dplyr::summarise(sum(wins))
         ))
       else
         return (as.numeric(tmp %>%
-                             filter(CZ_player %in% c(czA, czB),
+                             dplyr::filter(CZ_player %in% c(czA, czB),
                                     CZ_oppo %in% c(czA, czB)) %>%
-                             filter(CZ_oppo != CZ_player) %>%
-                             summarise(sum(wins))
+                             dplyr::filter(CZ_oppo != CZ_player) %>%
+                             dplyr::summarise(sum(wins))
         ))
     }
     
@@ -150,24 +133,24 @@ get_game_victory_data <- function (filtered_data) {
 filter_top_n_from_data <- function (game_victory, n_value) {
 
   top_cz <- game_victory %>%
-    filter(CZ_player != "Other") %>%
-    group_by(CZ_player) %>%
-    summarise(total_games = sum(game_count, na.rm = TRUE)) %>%
-    arrange(desc(total_games)) %>%
-    slice_head(n = n_value) %>%
-    pull(CZ_player)
+    dplyr::filter(CZ_player != "Other") %>%
+    dplyr::group_by(CZ_player) %>%
+    dplyr::summarise(total_games = sum(game_count, na.rm = TRUE)) %>%
+    dplyr::arrange(desc(total_games)) %>%
+    dplyr::slice_head(n = n_value) %>%
+    dplyr::pull(CZ_player)
 
   top_n_data <- game_victory %>%
-      mutate(CZ_player = ifelse(CZ_player %in% top_cz, CZ_player, "Other"),
+    dplyr::mutate(CZ_player = ifelse(CZ_player %in% top_cz, CZ_player, "Other"),
              CZ_oppo   = ifelse(CZ_oppo   %in% top_cz, CZ_oppo  , "Other"))%>%
-      group_by(CZ_player, CZ_oppo) %>%
-      reframe(
+    dplyr::group_by(CZ_player, CZ_oppo) %>%
+    dplyr::reframe(
         wins = sum(wins, na.rm = TRUE),
         game_count = sum(game_count, na.rm = TRUE),
         winrate = ifelse(CZ_player == CZ_oppo, 50, 100 * wins / game_count),
         .groups = "drop"
       ) %>%
-      unique()
+    unique()
   
   return(top_n_data);
 
@@ -248,20 +231,18 @@ get_tier_plot_data <- function (top_n_data) {
 
   existing_cz <- sort(unique(c(top_n_data$CZ_player, top_n_data$CZ_oppo)))
 
-  full_grid <- expand.grid(CZ_player = existing_cz, CZ_oppo = existing_cz, stringsAsFactors = FALSE)
-
   game_victory_no_mirror <- top_n_data %>%
       filter(
         CZ_player != CZ_oppo
       )
   
   tier_data <- tibble(CZ_player = existing_cz) %>%
-      rowwise() %>%
-      mutate(
+    dplyr::rowwise() %>%
+    dplyr::mutate(
         played_games = sum(game_victory_no_mirror$game_count[game_victory_no_mirror$CZ_player == CZ_player]),
-        victory = sum(game_victory_no_mirror$wins[game_victory_no_mirror$CZ_player == CZ_player])
+        victory = sum(game_victory_no_mirror$wins[game_victory_no_mirror$CZ_player == CZ_player]),
       ) %>%
-      ungroup()
+    dplyr::ungroup()
 
   
   # Compute CI for each player
@@ -273,60 +254,62 @@ get_tier_plot_data <- function (top_n_data) {
 
   # Add to tier_data
   df <- tier_data %>%
-      mutate(
+    dplyr::mutate(
         winrate = victory / played_games,
         representation = played_games / sum(played_games),
         ci_lower = ci_data$lower,
-        ci_upper = ci_data$upper
+        ci_upper = ci_data$upper,
+	      total_games = sum(victory)
       ) %>%
-      arrange(ci_lower) %>%
-      mutate(CZ_player = factor(CZ_player, levels = CZ_player)) %>%
-      filter(CZ_player != "Other") 
+    dplyr::arrange(ci_lower) %>%
+    dplyr::mutate(CZ_player = factor(CZ_player, levels = CZ_player)) %>%
+    dplyr::filter(CZ_player != "Other") 
 
   return(df);
 }
 
 generate_metashare_barplot <- function(tier_plot_data) {
-
-   df <- tier_plot_data %>%
-      filter(CZ_player != "Other") %>%
-      arrange(representation)
-    
-    # Compute dynamic x limit with a margin for labels
-    xmax <- max(df$representation * 100, na.rm = TRUE)
-    margin <- max(xmax * 0.05, 0.5)         # 5% or at least 0.5 units for small values
-    x_limit <- xmax + margin + 1
-    
-    gg <- df %>%
-      mutate(CZ_player = factor(CZ_player, levels = CZ_player)) %>%
-      ggplot(aes(x = representation * 100, y = CZ_player,
-                 text = paste0(played_games, " games"),
-                 fill = representation)) +
-      geom_col(show.legend = FALSE) +
-      geom_text(aes(label = paste0(round(representation * 100, 1), "%")),
-                position = position_nudge(x = margin),
-                hjust = 0, size = 4) +
-      scale_fill_viridis(discrete = FALSE) +
-      labs(
-        title = "Metagame share",
-        x = NULL,
-        y = NULL
-      ) +
-      theme_minimal(base_size = 14) +
-      theme(
-        plot.title = element_text(face = "bold", size = 16),
-        axis.text.x = element_blank(),
-        axis.ticks.x = element_blank(),
-        panel.grid.major.x = element_blank(),
-        panel.grid.minor.x = element_blank()
-      ) +
-      xlim(0, x_limit)
-    
-    
-    ggplotly(gg, tooltip = "text") %>%
-      layout(xaxis = list(side = "top"))
-
+  
+  df <- tier_plot_data %>%
+    filter(CZ_player != "Other") %>%
+    arrange(representation)
+  
+  xmax <- max(df$representation * 100, na.rm = TRUE)
+  margin <- max(xmax * 0.05, 0.5)
+  x_limit <- xmax + margin + 1
+  
+  total_games <- unique(df$total_games)[1]  # or compute manually if needed
+  
+  gg <- df %>%
+    mutate(CZ_player = factor(CZ_player, levels = CZ_player)) %>%
+    ggplot(aes(x = representation * 100, y = CZ_player,
+               text = paste0(played_games, " games"),
+               fill = representation)) +
+    geom_col(show.legend = FALSE) +
+    geom_text(aes(label = paste0(round(representation * 100, 1), "%")),
+              position = position_nudge(x = margin),
+              hjust = 0, size = 4) +
+    scale_fill_viridis(discrete = FALSE) +
+    labs(
+      title = "Metagame share",
+      x = sprintf("%d total played games", total_games),
+      y = NULL
+    ) +
+    theme_minimal(base_size = 14) +
+    theme(
+      plot.title = element_text(face = "bold", size = 16),
+      axis.text.x = element_blank(),
+      axis.ticks.x = element_blank(),
+      panel.grid.major.x = element_blank(),
+      panel.grid.minor.x = element_blank(),
+      axis.title.x = element_text(color = "grey60", vjust = 3, size = 12)
+    ) +
+    xlim(0, x_limit)
+  
+  ggplotly(gg, tooltip = "text") %>%
+    layout(xaxis = list(side = "top"))
 }
+
 
 
 generate_winrate_with_ci_plot <- function(tier_plot_data) {
