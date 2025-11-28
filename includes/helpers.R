@@ -55,7 +55,10 @@ label_map <- c(
   "Taii Wakeen, Perfect Shot" = "Taii Wakeen",
   "Uharis, the Stormspinner" = "Spider-Man 2099",
   "Peter Parker // Amazing Spider-Man" = "Peter Parker",
-  "Terra, Magical Adept // Esper Terra" = "Terra"
+  "Terra, Magical Adept // Esper Terra" = "Terra",
+  "Ikra Shidiqi, the Usurper|Rograkh, Son of Rohgahh" = "Rograkh Jund",
+  "Aang, Swift Savior // Aang and La, Ocean's Fury" = "Aang",
+  "Breya, Etherium Shaper" = "Breya"
 )
 
 
