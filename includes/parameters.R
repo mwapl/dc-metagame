@@ -1,1 +1,1 @@
-last_banlist_date <- "2025-11-24"
+last_banlist_date <- "2026-01-26"
