@@ -59,7 +59,8 @@ label_map <- c(
   "Ikra Shidiqi, the Usurper|Rograkh, Son of Rohgahh" = "Rograkh Jund",
   "Aang, Swift Savior // Aang and La, Ocean's Fury" = "Aang",
   "Breya, Etherium Shaper" = "Breya",
-  "Ozai, the Phoenix King" = "Ozai"
+  "Ozai, the Phoenix King" = "Ozai",
+  "Tasigur, the Golden Fang" = "Tasigur"
 )
 
 
