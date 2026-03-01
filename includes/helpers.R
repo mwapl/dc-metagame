@@ -62,7 +62,9 @@ label_map <- c(
   "Aang, Swift Savior // Aang and La, Ocean's Fury" = "Aang",
   "Breya, Etherium Shaper" = "Breya",
   "Ozai, the Phoenix King" = "Ozai",
-  "Tasigur, the Golden Fang" = "Tasigur"
+  "Tasigur, the Golden Fang" = "Tasigur",
+  "Hei Bai, Forest Guardian" = "Hei Bai",
+  "Brigid, Clachan's Heart // Brigid, Doun's Mind" = "Brigid"
 )
 
 
