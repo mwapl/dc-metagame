@@ -8,7 +8,7 @@ label_map <- c(
   "Azusa, Lost but Seeking" = "Azusa",
   "Basim Ibn Ishaq" = "Basim",
   "Breya, Etherium Shaper" = "Breya",
-  "Brigid, Clachan's Heart // Brigid, Doun's Mind" = "Brigid"
+  "Brigid, Clachan's Heart // Brigid, Doun's Mind" = "Brigid",
   "Bruse Tarl, Boorish Herder|Yoshimaru, Ever Faithful" = "Yoshi X Boros",
   "Cecil, Dark Knight // Cecil, Redeemed Paladin" = "Cecil",
   "Cloud, Midgar Mercenary" = "Cloud",
@@ -66,7 +66,7 @@ label_map <- c(
   "Taii Wakeen, Perfect Shot" = "Taii Wakeen",
   "Terra, Magical Adept // Esper Terra" = "Terra",
   "Ikra Shidiqi, the Usurper|Rograkh, Son of Rohgahh" = "Rograkh Jund",
-  "Ozai, the Phoenix King" = "Ozai",
+  "Ozai, the Phoenix King" = "Ozai"
 )
 
 
