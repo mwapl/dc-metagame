@@ -4,7 +4,7 @@
 
 Little github repo using github action to automatically update some metagame informations for french Duel Commander.
 
-Fill in form to register your game results can be found [here](https://script.google.com/macros/s/AKfycbypLu4K7h7oZ7k6kKpNl0uWtzl0QRcZQJB4Axfd--1vffgGcsnXSPUsHlWCpCusXva9/exec).
+Fill in form to register your game results can be found [here](https://script.google.com/macros/s/AKfycbxpf3jGfUhVoAOCxDuf4qt74kcw2C_KheJAYCvogSDH0_QPebh8jGb99RHxi0RXnyc9/exec).
 
 The github action produces the following [shiny app web application](https://5uwf89-mathieu-laurent.shinyapps.io/DCMetagame-app/) in which you can play with the data from the
 last games that were recorded by players.
