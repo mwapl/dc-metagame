@@ -24,7 +24,7 @@ informations.
 
 ## 💾 The Project
 
-Players can easily record their games using this **[submission form](https://script.google.com/macros/s/AKfycbypLu4K7h7oZ7k6kKpNl0uWtzl0QRcZQJB4Axfd--1vffgGcsnXSPUsHlWCpCusXva9/exec)**.
+Players can easily record their games using this **[submission form](https://script.google.com/macros/s/AKfycbxpf3jGfUhVoAOCxDuf4qt74kcw2C_KheJAYCvogSDH0_QPebh8jGb99RHxi0RXnyc9/exec)**.
 
 The form is essentially a stylized Google Form (see *How It Works* below for details).  
 The most important fields are:
