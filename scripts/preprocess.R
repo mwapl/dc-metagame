@@ -1,6 +1,9 @@
 library(rsconnect)
 
 source("app.R")
+install.packages("remotes")
+remotes::install_version("fs", version = "1.6.3", repos = "https://cloud.r-project.org")
+
 Sys.setenv(USE_BUNDLED_LIBUV = "1")
 # Deploy
 rsconnect::setAccountInfo(
