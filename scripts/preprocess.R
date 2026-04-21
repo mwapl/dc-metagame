@@ -1,7 +1,7 @@
 library(rsconnect)
 
 source("app.R")
-
+Sys.setenv(USE_BUNDLED_LIBUV = "1")
 # Deploy
 rsconnect::setAccountInfo(
   name = Sys.getenv("SHINY_ACCOUNT"),
