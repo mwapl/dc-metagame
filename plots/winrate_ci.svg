@@ -772,7 +772,7 @@
 <circle cx='447.04' cy='262.39' r='3.56' style='stroke-width: 0.71; stroke: #299B87; fill: #299B87;' />
 <circle cx='455.11' cy='237.06' r='3.56' style='stroke-width: 0.71; stroke: #63C167; fill: #63C167;' />
 <circle cx='473.49' cy='211.73' r='3.56' style='stroke-width: 0.71; stroke: #67C464; fill: #67C464;' />
-<circle cx='448.93' cy='186.40' r='3.56' style='stroke-width: 0.71; stroke: #6AC661; fill: #6AC661;' />
+<circle cx='449.22' cy='186.40' r='3.56' style='stroke-width: 0.71; stroke: #6BC760; fill: #6BC760;' />
 <circle cx='458.92' cy='161.07' r='3.56' style='stroke-width: 0.71; stroke: #93D54C; fill: #93D54C;' />
 <circle cx='464.25' cy='135.74' r='3.56' style='stroke-width: 0.71; stroke: #9BD64A; fill: #9BD64A;' />
 <circle cx='468.19' cy='110.41' r='3.56' style='stroke-width: 0.71; stroke: #D5E038; fill: #D5E038;' />
@@ -820,9 +820,9 @@
 <polyline points='517.70,214.26 517.70,209.20 ' style='stroke-width: 1.71; stroke: #67C464; stroke-linecap: butt;' />
 <polyline points='517.70,211.73 427.85,211.73 ' style='stroke-width: 1.71; stroke: #67C464; stroke-linecap: butt;' />
 <polyline points='427.85,214.26 427.85,209.20 ' style='stroke-width: 1.71; stroke: #67C464; stroke-linecap: butt;' />
-<polyline points='469.13,188.93 469.13,183.87 ' style='stroke-width: 1.71; stroke: #6AC661; stroke-linecap: butt;' />
-<polyline points='469.13,186.40 428.63,186.40 ' style='stroke-width: 1.71; stroke: #6AC661; stroke-linecap: butt;' />
-<polyline points='428.63,188.93 428.63,183.87 ' style='stroke-width: 1.71; stroke: #6AC661; stroke-linecap: butt;' />
+<polyline points='469.39,188.93 469.39,183.87 ' style='stroke-width: 1.71; stroke: #6BC760; stroke-linecap: butt;' />
+<polyline points='469.39,186.40 428.95,186.40 ' style='stroke-width: 1.71; stroke: #6BC760; stroke-linecap: butt;' />
+<polyline points='428.95,188.93 428.95,183.87 ' style='stroke-width: 1.71; stroke: #6BC760; stroke-linecap: butt;' />
 <polyline points='482.22,163.60 482.22,158.54 ' style='stroke-width: 1.71; stroke: #93D54C; stroke-linecap: butt;' />
 <polyline points='482.22,161.07 435.38,161.07 ' style='stroke-width: 1.71; stroke: #93D54C; stroke-linecap: butt;' />
 <polyline points='435.38,163.60 435.38,158.54 ' style='stroke-width: 1.71; stroke: #93D54C; stroke-linecap: butt;' />
