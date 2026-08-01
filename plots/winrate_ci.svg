@@ -771,7 +771,7 @@
 <circle cx='432.50' cy='313.05' r='3.56' style='stroke-width: 0.71; stroke: #2C888B; fill: #2C888B;' />
 <circle cx='453.36' cy='287.72' r='3.56' style='stroke-width: 0.71; stroke: #289C87; fill: #289C87;' />
 <circle cx='449.38' cy='262.39' r='3.56' style='stroke-width: 0.71; stroke: #25A485; fill: #25A485;' />
-<circle cx='449.00' cy='237.06' r='3.56' style='stroke-width: 0.71; stroke: #55BA70; fill: #55BA70;' />
+<circle cx='448.89' cy='237.06' r='3.56' style='stroke-width: 0.71; stroke: #55BA70; fill: #55BA70;' />
 <circle cx='470.93' cy='211.73' r='3.56' style='stroke-width: 0.71; stroke: #5DBE6B; fill: #5DBE6B;' />
 <circle cx='449.22' cy='186.40' r='3.56' style='stroke-width: 0.71; stroke: #6BC660; fill: #6BC660;' />
 <circle cx='459.37' cy='161.07' r='3.56' style='stroke-width: 0.71; stroke: #98D64B; fill: #98D64B;' />
@@ -815,8 +815,8 @@
 <polyline points='482.65,264.92 482.65,259.86 ' style='stroke-width: 1.71; stroke: #25A485; stroke-linecap: butt;' />
 <polyline points='482.65,262.39 415.84,262.39 ' style='stroke-width: 1.71; stroke: #25A485; stroke-linecap: butt;' />
 <polyline points='415.84,264.92 415.84,259.86 ' style='stroke-width: 1.71; stroke: #25A485; stroke-linecap: butt;' />
-<polyline points='473.61,239.59 473.61,234.53 ' style='stroke-width: 1.71; stroke: #55BA70; stroke-linecap: butt;' />
-<polyline points='473.61,237.06 424.25,237.06 ' style='stroke-width: 1.71; stroke: #55BA70; stroke-linecap: butt;' />
+<polyline points='473.39,239.59 473.39,234.53 ' style='stroke-width: 1.71; stroke: #55BA70; stroke-linecap: butt;' />
+<polyline points='473.39,237.06 424.25,237.06 ' style='stroke-width: 1.71; stroke: #55BA70; stroke-linecap: butt;' />
 <polyline points='424.25,239.59 424.25,234.53 ' style='stroke-width: 1.71; stroke: #55BA70; stroke-linecap: butt;' />
 <polyline points='514.69,214.26 514.69,209.20 ' style='stroke-width: 1.71; stroke: #5DBE6B; stroke-linecap: butt;' />
 <polyline points='514.69,211.73 425.88,211.73 ' style='stroke-width: 1.71; stroke: #5DBE6B; stroke-linecap: butt;' />
