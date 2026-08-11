@@ -774,7 +774,7 @@
 <circle cx='453.36' cy='287.72' r='3.56' style='stroke-width: 0.71; stroke: #289C87; fill: #289C87;' />
 <circle cx='449.38' cy='262.39' r='3.56' style='stroke-width: 0.71; stroke: #25A485; fill: #25A485;' />
 <circle cx='470.93' cy='237.06' r='3.56' style='stroke-width: 0.71; stroke: #5DBE6B; fill: #5DBE6B;' />
-<circle cx='450.68' cy='211.73' r='3.56' style='stroke-width: 0.71; stroke: #61C068; fill: #61C068;' />
+<circle cx='451.97' cy='211.73' r='3.56' style='stroke-width: 0.71; stroke: #67C464; fill: #67C464;' />
 <circle cx='449.22' cy='186.40' r='3.56' style='stroke-width: 0.71; stroke: #6BC660; fill: #6BC660;' />
 <circle cx='464.04' cy='161.07' r='3.56' style='stroke-width: 0.71; stroke: #9AD64A; fill: #9AD64A;' />
 <circle cx='461.25' cy='135.74' r='3.56' style='stroke-width: 0.71; stroke: #AAD946; fill: #AAD946;' />
@@ -820,9 +820,9 @@
 <polyline points='514.69,239.59 514.69,234.53 ' style='stroke-width: 1.71; stroke: #5DBE6B; stroke-linecap: butt;' />
 <polyline points='514.69,237.06 425.88,237.06 ' style='stroke-width: 1.71; stroke: #5DBE6B; stroke-linecap: butt;' />
 <polyline points='425.88,239.59 425.88,234.53 ' style='stroke-width: 1.71; stroke: #5DBE6B; stroke-linecap: butt;' />
-<polyline points='474.62,214.26 474.62,209.20 ' style='stroke-width: 1.71; stroke: #61C068; stroke-linecap: butt;' />
-<polyline points='474.62,211.73 426.58,211.73 ' style='stroke-width: 1.71; stroke: #61C068; stroke-linecap: butt;' />
-<polyline points='426.58,214.26 426.58,209.20 ' style='stroke-width: 1.71; stroke: #61C068; stroke-linecap: butt;' />
+<polyline points='475.81,214.26 475.81,209.20 ' style='stroke-width: 1.71; stroke: #67C464; stroke-linecap: butt;' />
+<polyline points='475.81,211.73 427.96,211.73 ' style='stroke-width: 1.71; stroke: #67C464; stroke-linecap: butt;' />
+<polyline points='427.96,214.26 427.96,209.20 ' style='stroke-width: 1.71; stroke: #67C464; stroke-linecap: butt;' />
 <polyline points='469.39,188.93 469.39,183.87 ' style='stroke-width: 1.71; stroke: #6BC660; stroke-linecap: butt;' />
 <polyline points='469.39,186.40 428.95,186.40 ' style='stroke-width: 1.71; stroke: #6BC660; stroke-linecap: butt;' />
 <polyline points='428.95,188.93 428.95,183.87 ' style='stroke-width: 1.71; stroke: #6BC660; stroke-linecap: butt;' />
@@ -855,7 +855,7 @@
 <text x='767.67' y='291.34' style='font-size: 9.96px; font-weight: bold; font-family: "DejaVu Sans";' textLength='34.52px' lengthAdjust='spacingAndGlyphs'>52.6%</text>
 <text x='767.67' y='266.02' style='font-size: 9.96px; font-weight: bold; font-family: "DejaVu Sans";' textLength='34.52px' lengthAdjust='spacingAndGlyphs'>52.0%</text>
 <text x='767.67' y='240.69' style='font-size: 9.96px; font-weight: bold; font-family: "DejaVu Sans";' textLength='34.52px' lengthAdjust='spacingAndGlyphs'>55.3%</text>
-<text x='767.67' y='215.36' style='font-size: 9.96px; font-weight: bold; font-family: "DejaVu Sans";' textLength='34.52px' lengthAdjust='spacingAndGlyphs'>52.2%</text>
+<text x='767.67' y='215.36' style='font-size: 9.96px; font-weight: bold; font-family: "DejaVu Sans";' textLength='34.52px' lengthAdjust='spacingAndGlyphs'>52.4%</text>
 <text x='767.67' y='190.03' style='font-size: 9.96px; font-weight: bold; font-family: "DejaVu Sans";' textLength='34.52px' lengthAdjust='spacingAndGlyphs'>51.9%</text>
 <text x='767.67' y='164.70' style='font-size: 9.96px; font-weight: bold; font-family: "DejaVu Sans";' textLength='34.52px' lengthAdjust='spacingAndGlyphs'>54.2%</text>
 <text x='767.67' y='139.37' style='font-size: 9.96px; font-weight: bold; font-family: "DejaVu Sans";' textLength='34.52px' lengthAdjust='spacingAndGlyphs'>53.8%</text>
@@ -875,7 +875,7 @@
 <text x='813.09' y='291.34' style='font-size: 9.96px;fill: #BCBCBC; font-family: "DejaVu Sans";' textLength='46.14px' lengthAdjust='spacingAndGlyphs'>(46-59%)</text>
 <text x='813.09' y='266.02' style='font-size: 9.96px;fill: #BCBCBC; font-family: "DejaVu Sans";' textLength='46.14px' lengthAdjust='spacingAndGlyphs'>(47-57%)</text>
 <text x='813.09' y='240.69' style='font-size: 9.96px;fill: #BCBCBC; font-family: "DejaVu Sans";' textLength='46.14px' lengthAdjust='spacingAndGlyphs'>(48-62%)</text>
-<text x='813.09' y='215.36' style='font-size: 9.96px;fill: #BCBCBC; font-family: "DejaVu Sans";' textLength='46.14px' lengthAdjust='spacingAndGlyphs'>(48-56%)</text>
+<text x='813.09' y='215.36' style='font-size: 9.96px;fill: #BCBCBC; font-family: "DejaVu Sans";' textLength='46.14px' lengthAdjust='spacingAndGlyphs'>(49-56%)</text>
 <text x='813.09' y='190.03' style='font-size: 9.96px;fill: #BCBCBC; font-family: "DejaVu Sans";' textLength='46.14px' lengthAdjust='spacingAndGlyphs'>(49-55%)</text>
 <text x='813.09' y='164.70' style='font-size: 9.96px;fill: #BCBCBC; font-family: "DejaVu Sans";' textLength='46.14px' lengthAdjust='spacingAndGlyphs'>(50-58%)</text>
 <text x='813.09' y='139.37' style='font-size: 9.96px;fill: #BCBCBC; font-family: "DejaVu Sans";' textLength='46.14px' lengthAdjust='spacingAndGlyphs'>(50-57%)</text>
