@@ -1,12 +1,5 @@
 [
   {
-    "objectID": "tools/eventlink_game_generator.html",
-    "href": "tools/eventlink_game_generator.html",
-    "title": "Tournament Game Generator",
-    "section": "",
-    "text": "Use this page to generate formatted match results directly in your browser. Everything runs locally — no upload to any server.\n\n  Generate games from CSVs\n\n  \n    Player–Deck mapping (CSV)\n    \n  \n\n  \n    Results file (CSV)\n    \n  \n\n  Run generator\n  📥 Download results\n\n  \n    Errors / Logs\n    \n  \n\n\n\n\n\n\nInputs\n\nPlayer-Deck mapping is expecting a CSV file, using ‘,’ (comma) as separator, corresponding to the header “Player”,“Deck”.\n\n\n🧰 Coming soon: some way to generate such file from a table Player &lt;-&gt; DeckURL\n\n\nResults file must be a CSV file too, also using ‘,’ (comma) as separator, corresponding to the header Table,“Player 1”,“Player 2”,“MatchResult”. This one can be generated easily from eventlink using a small chrome plugin (see Chrome Plugin below).\n\n\n\nChrome Plugin\nA Google Chrome plugin is a simple small code that runs locally within your browser. In this case, it simply look at the current web page, and tries to read the values for the players, tables and game results.\nTo use the plugin, start by downloading this zip file containing everything required. Unzip it somewhere you can find it, then open Google Chrome. Go into “Extension” &gt; “Manage extensions”. Be sure to check the “Developer mode” at the top right corner. Then click “Load unpacked” and select the directory you just downloaded (eventLinkPlugin).\nCongrats! You just installed the plugin. Now if you click on the extensions symbol again, you should see it. For convenience, you can also pin it, so it keeps appearing at the top of your browser. Open an eventlink page, and select a round that has finished. Click on the “extract results”, and that’s it. You can now paste the result in a CSV file. Be carefull if you provide multiple rounds at once, the header (the line “Table,Player 1,Player 2, MatchResult”) will show multiple times. Simply remove each occurence, except for the first one."
-  },
-  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "French Duel Commander Metagame Project",
@@ -54,5 +47,12 @@
     "title": "French Duel Commander Metagame Project",
     "section": "Acknowledgments",
     "text": "Acknowledgments\nA particular mention goes to the Roazhon DC team, which initiated the project and gave precious feedback.\nHuge thanks to Aliquanto and Jiliac, whose R graphic styles inspired the look of these visualizations.\n\n💡 This site is built and deployed automatically using GitHub Actions and GitHub Pages.\nEach day, new game data is fetched, analyzed, and visualized — keeping the dashboard up to date for everyone."
+  },
+  {
+    "objectID": "tools/eventlink_game_generator.html",
+    "href": "tools/eventlink_game_generator.html",
+    "title": "Tournament Game Generator",
+    "section": "",
+    "text": "Use this page to generate formatted match results directly in your browser. Everything runs locally — no upload to any server.\n\n  Generate games from CSVs\n\n  \n    Player–Deck mapping (CSV)\n    \n  \n\n  \n    Results file (CSV)\n    \n  \n\n  Run generator\n  📥 Download results\n\n  \n    Errors / Logs\n    \n  \n\n\n\n\n\n\nInputs\n\nPlayer-Deck mapping is expecting a CSV file, using ‘,’ (comma) as separator, corresponding to the header “Player”,“Deck”.\n\n\n🧰 Coming soon: some way to generate such file from a table Player &lt;-&gt; DeckURL\n\n\nResults file must be a CSV file too, also using ‘,’ (comma) as separator, corresponding to the header Table,“Player 1”,“Player 2”,“MatchResult”. This one can be generated easily from eventlink using a small chrome plugin (see Chrome Plugin below).\n\n\n\nChrome Plugin\nA Google Chrome plugin is a simple small code that runs locally within your browser. In this case, it simply look at the current web page, and tries to read the values for the players, tables and game results.\nTo use the plugin, start by downloading this zip file containing everything required. Unzip it somewhere you can find it, then open Google Chrome. Go into “Extension” &gt; “Manage extensions”. Be sure to check the “Developer mode” at the top right corner. Then click “Load unpacked” and select the directory you just downloaded (eventLinkPlugin).\nCongrats! You just installed the plugin. Now if you click on the extensions symbol again, you should see it. For convenience, you can also pin it, so it keeps appearing at the top of your browser. Open an eventlink page, and select a round that has finished. Click on the “extract results”, and that’s it. You can now paste the result in a CSV file. Be carefull if you provide multiple rounds at once, the header (the line “Table,Player 1,Player 2, MatchResult”) will show multiple times. Simply remove each occurence, except for the first one."
   }
 ]
